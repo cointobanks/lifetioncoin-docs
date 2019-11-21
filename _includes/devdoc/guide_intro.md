@@ -6,13 +6,13 @@ http://opensource.org/licenses/MIT.
 {% autocrossref %}
 
 The Developer Guide aims to provide the information you need to understand
-Dash and start building Dash-based applications, but it is [not a
+Lifetioncoin and start building Lifetioncoin-based applications, but it is [not a
 specification][]. To make the best use of
-this documentation, you may want to install the current version of Dash
+this documentation, you may want to install the current version of Lifetioncoin
 Core, either from [source][core git] or from a [pre-compiled executable][core executable].
 
-Questions about Dash development are best asked in one of the
-[Dash development communities][dev communities].
+Questions about Lifetioncoin development are best asked in one of the
+[Lifetioncoin development communities][dev communities].
 Errors or suggestions related to
 documentation on [dash-docs.github.io](https://dash-docs.github.io) can be
 [submitted as an issue][docs issue].

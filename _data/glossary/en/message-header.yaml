@@ -7,7 +7,7 @@ required:
     title_max_40_characters_no_formatting: Message Header
 
     summary_max_255_characters_no_formatting: >
-        The four header fields prefixed to all messages on the Dash
+        The four header fields prefixed to all messages on the Lifetioncoin
         P2P network.
 
     synonyms_shown_in_glossary_capitalize_first_letter:

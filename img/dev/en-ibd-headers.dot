@@ -49,7 +49,7 @@ inv [ shape="plaintext", label=<
             <td><i>80-byte Block Headers + 0x00 (The Empty Tx Count)</i></td>
           </tr>
 
-		  // Block headers not updated for Dash
+		  // Block headers not updated for Lifetioncoin
 
           <tr>
             <td><font face="courier">010000006fe28cab...ff001d01e3629900</font></td>

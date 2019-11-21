@@ -1,4 +1,4 @@
-# Welcome to Dash-docs.github.io.org's Codebase
+# Welcome to lifetioncoin-docs's Codebase
 
 Current Build Status: ![Build Status](https://travis-ci.org/dash-docs/dash-docs.svg?branch=master)
 

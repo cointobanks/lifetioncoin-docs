@@ -534,17 +534,17 @@ devsearches:
     - "verack": "/en/developer-reference#verack"
     - "version": "/en/developer-reference#version"
 
-    # Dash - sporks
+    # Lifetioncoin - sporks
     - "getsporks": "/en/developer-reference#getsporks"
     - "spork": "/en/developer-reference#spork"
 
-    # Dash - instantsend
+    # Lifetioncoin - instantsend
     - "clsig": "/en/developer-reference#clsig"
     - "islock": "/en/developer-reference#islock"
     - "ix": "/en/developer-reference#ix"
     - "txlvote": "/en/developer-reference#txlvote"
 
-    # Dash - privatesend
+    # Lifetioncoin - privatesend
     - "dsa": "/en/developer-reference#dsa"
     - "dsc": "/en/developer-reference#dsc"
     - "dsf": "/en/developer-reference#dsf"
@@ -554,11 +554,11 @@ devsearches:
     - "dssu": "/en/developer-reference#dssu"
     - "dstx": "/en/developer-reference#dstx"
 
-    # Dash - masternode
+    # Lifetioncoin - masternode
     - "ssc": "/en/developer-reference#ssc"
     - "mnauth": "/en/developer-reference#mnauth"
 
-    # Dash - quorums
+    # Lifetioncoin - quorums
     - "qbsigs": "/en/developer-reference#qbsigs"
     - "qcomplaint": "/en/developer-reference#qcomplaint"
     - "qcontrib": "/en/developer-reference#qcontrib"
@@ -572,12 +572,12 @@ devsearches:
     - "qsigsinv": "/en/developer-reference#qsigsinv"
     - "qwatch": "/en/developer-reference#qwatch"
 
-    # Dash - governance
+    # Lifetioncoin - governance
     - "govobj": "/en/developer-reference#govobj"
     - "govobjvote": "/en/developer-reference#govobjvote"
     - "govsync": "/en/developer-reference#govsync"
 
-    # Dash - deprecated
+    # Lifetioncoin - deprecated
     - "dseg": "/en/developer-reference#dseg"
     - "mnb": "/en/developer-reference#mnb"
     - "mnget": "/en/developer-reference#mnget"

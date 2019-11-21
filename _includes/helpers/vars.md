@@ -61,7 +61,7 @@ http://opensource.org/licenses/MIT.
 - n: "<br>`chainlock`"
   t: "bool"
   p: "Required<br>(exactly 1)"
-  d: "*Added in Dash Core 0.14.0*<br><br>If set to `true`, this transaction is in a block that is locked (not susceptible to a chain re-org)"  
+  d: "*Added in Lifetioncoin Core 0.14.0*<br><br>If set to `true`, this transaction is in a block that is locked (not susceptible to a chain re-org)"  
 
 - n: "{{DEPTH}}<br>`generated`"
   t: "bool"
@@ -170,7 +170,7 @@ NOT IN DASH
 - n: "{{DEPTH}} →<br>`type`"
   t: "number (int)"
   p: "Required<br>(exactly 1)"
-  d: "*Added in Dash Core 0.13.0.0*<br><br>The transaction format type"
+  d: "*Added in Lifetioncoin Core 0.13.0.0*<br><br>The transaction format type"
 
 - n: "{{DEPTH}} →<br>`locktime`"
   t: "number (int)"
@@ -218,9 +218,9 @@ NOT IN DASH
   d: "The coinbase (similar to the hex field of a scriptSig) encoded as hex.  Only present if this is a coinbase transaction"
 
 - n: "{{DEPTH}} → → →<br>`value`"
-  t: "number (Dash)"
+  t: "number (Lifetioncoin)"
   p: "Optional<br>(exactly 1)"
-  d: "The number of Dash paid to this output.  May be `0`.<br><br>Only present if `spentindex` enabled"
+  d: "The number of Lifetioncoin paid to this output.  May be `0`.<br><br>Only present if `spentindex` enabled"
 
 - n: "{{DEPTH}} → → →<br>`valueSat`"
   t: "number (duffs)"
@@ -261,9 +261,9 @@ NOT IN DASH
   d: "An object describing one of this transaction's outputs"
 
 - n: "{{DEPTH}} → → →<br>`value`"
-  t: "number (Dash)"
+  t: "number (Lifetioncoin)"
   p: "Required<br>(exactly 1)"
-  d: "The number of Dash paid to this output.  May be `0`"
+  d: "The number of Lifetioncoin paid to this output.  May be `0`"
 
 - n: "{{DEPTH}} → → →<br>`valueSat`"
   t: "number (duffs)"
@@ -313,12 +313,12 @@ NOT IN DASH
 - n: "{{DEPTH}} →<br>`extraPayloadSize`"
   t: "number (int)"
   p: "Optional<br>(0 or 1)"
-  d: "*Added in Dash Core 0.13.0.0*<br><br>Size of the DIP2 extra payload. Only present if it's a DIP2 special transaction"
+  d: "*Added in Lifetioncoin Core 0.13.0.0*<br><br>Size of the DIP2 extra payload. Only present if it's a DIP2 special transaction"
 
 - n: "{{DEPTH}} →<br>`extraPayload`"
   t: "string (hex)"
   p: "Optional<br>(0 or 1)"
-  d: "*Added in Dash Core 0.13.0.0*<br><br>Hex encoded DIP2 extra payload data. Only present if it's a DIP2 special transaction"
+  d: "*Added in Lifetioncoin Core 0.13.0.0*<br><br>Hex encoded DIP2 extra payload data. Only present if it's a DIP2 special transaction"
 {% endcapture %}
 
 {% assign INCLUDE_WALLET_UNLOCKED="If the wallet has been encrypted either through the GUI or with the `encryptwallet` RPC, it must first be unlocked with the `walletpassphrase` RPC" %}
@@ -593,4 +593,4 @@ NOT IN DASH
 {% assign WARNING="![Warning icon](/img/icons/icon_warning.svg) **Warning:**" %}
 {% assign WARNING_ICON="![Warning icon](/img/icons/icon_warning.svg)" %}
 
-{% assign reindexNote="Note: if you begin using `txindex=1` after downloading the block chain, you must rebuild your indexes by starting Dash Core with the option  `-reindex`.  This may take several hours to complete, during which time your node will not process new blocks or transactions. This reindex only needs to be done once." %}
+{% assign reindexNote="Note: if you begin using `txindex=1` after downloading the block chain, you must rebuild your indexes by starting Lifetioncoin Core with the option  `-reindex`.  This may take several hours to complete, during which time your node will not process new blocks or transactions. This reindex only needs to be done once." %}

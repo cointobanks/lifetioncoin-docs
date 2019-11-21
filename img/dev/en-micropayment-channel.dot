@@ -50,5 +50,5 @@ btx2v4 -> atx2v5 [ label = "B: [...]" ];
 atx2v5 -> btx2v5 [ style = dashed, label = "A: I'm done for the day.  I'm\ngoing to broadcast refund v45" ];
 
 
-label = " \n \nAlice broadcasts the bond to the Dash network immediately.\nShe broadcasts the final version of the refund when she finishes work\nor before the locktime.  If she fails to broadcast before refund v1's time lock\nexpires, Bob can broadcast refund v1 to get a full refund.\n \nDash Micropayment Channels"
+label = " \n \nAlice broadcasts the bond to the Lifetioncoin network immediately.\nShe broadcasts the final version of the refund when she finishes work\nor before the locktime.  If she fails to broadcast before refund v1's time lock\nexpires, Bob can broadcast refund v1 to get a full refund.\n \nDash Micropayment Channels"
 }

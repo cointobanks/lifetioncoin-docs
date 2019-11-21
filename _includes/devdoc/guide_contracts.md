@@ -9,13 +9,13 @@ http://opensource.org/licenses/MIT.
 
 {% autocrossref %}
 
-Contracts are transactions which use the decentralized Dash system to enforce
+Contracts are transactions which use the decentralized Lifetioncoin system to enforce
 financial agreements.
-Dash contracts can often be crafted to minimize dependency on outside
+Lifetioncoin contracts can often be crafted to minimize dependency on outside
 agents, such as the court system, which significantly decreases the risk
 of dealing with unknown entities in financial transactions.
 
-The following subsections will describe a variety of Dash contracts
+The following subsections will describe a variety of Lifetioncoin contracts
 already in use. Because contracts deal with real people, not just
 transactions, they are framed below in story format.
 
@@ -194,7 +194,7 @@ If someone uses transaction malleability to break the link between the
 two transactions, Alice could hold Bob's 100 millidash hostage even if she
 hadn't done any work.
 
-For larger payments, Dash transaction fees are very low as a
+For larger payments, Lifetioncoin transaction fees are very low as a
 percentage of the total transaction value, so it makes more sense to
 protect payments with immediately-broadcast separate transactions.
 

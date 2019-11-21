@@ -71,7 +71,7 @@ The opcodes used in the pubkey scripts of standard transactions are:
 
 A complete list of opcodes can be found on the Bitcoin Wiki [Script
 Page][wiki script], with an authoritative list in the `opcodetype` enum
-of the Dash Core [script header file][core script.h]
+of the Lifetioncoin Core [script header file][core script.h]
 
 ![Warning icon](/img/icons/icon_warning.svg)
 **<span id="signature_script_modification_warning">Signature script modification warning</span>:**
@@ -133,7 +133,7 @@ Failure, aborted: two signature matches required but none found so
 
 {% autocrossref %}
 
-The hashes used in P2PKH and P2SH outputs are commonly encoded as Dash
+The hashes used in P2PKH and P2SH outputs are commonly encoded as Lifetioncoin
 addresses.  This is the procedure to encode those hashes and decode the
 addresses.
 
@@ -144,11 +144,11 @@ format used in raw transactions (described in a [following
 sub-section][raw transaction format]).  Taking the resulting hash:
 
 1. Add an address version byte in front of the hash.  The version
-bytes commonly used by Dash are:
+bytes commonly used by Lifetioncoin are:
 
-    * 0x4c for P2PKH addresses on the main Dash network (mainnet)
+    * 0x4c for P2PKH addresses on the main Lifetioncoin network (mainnet)
 
-    * 0x8c for P2PKH addresses on the Dash testing network (testnet)
+    * 0x8c for P2PKH addresses on the Lifetioncoin testing network (testnet)
 
     * 0x10 for P2SH addresses on mainnet
 
@@ -163,7 +163,7 @@ bytes commonly used by Dash are:
 4. Append the checksum to the version and hash, and encode it as a base58
    string: <!--[-->`BASE58(version . hash . checksum)`<!--]-->
 
-Dash's base58 encoding, called [Base58Check][/en/glossary/base58check]{:#term-base58check}{:.term} may not match other implementations. Tier
+Lifetioncoin's base58 encoding, called [Base58Check][/en/glossary/base58check]{:#term-base58check}{:.term} may not match other implementations. Tier
 Nolan provided the following example encoding algorithm to the Bitcoin
 Wiki [Base58Check
 encoding](https://en.bitcoin.it/wiki/Base58Check_encoding) page under
@@ -189,7 +189,7 @@ repeat(number_of_leading_zero_bytes_in_hash)
 output_string.reverse();
 {% endhighlight %}
 
-Dash's own code can be traced using the [base58 header
+Lifetioncoin's own code can be traced using the [base58 header
 file][core base58.h].
 
 To convert addresses back into hashes, reverse the base58 encoding, extract
@@ -203,13 +203,13 @@ against the extracted checksum, and then remove the version byte.
 
 {% autocrossref %}
 
-Dash transactions are broadcast between peers
+Lifetioncoin transactions are broadcast between peers
 in a serialized byte format, called [raw format][/en/glossary/serialized-transaction]{:#term-raw-format}{:.term}.
 It is this form of a transaction which is SHA256(SHA256()) hashed to create
 the TXID and, ultimately, the merkle root of a block containing the
 transaction---making the transaction format part of the consensus rules.
 
-Dash Core and many other tools print and accept raw transactions
+Lifetioncoin Core and many other tools print and accept raw transactions
 encoded as hex.
 
 Transactions prior to protocol version 70209 defaulted to version 1. Transaction
@@ -220,7 +220,7 @@ by BIP68 to enable relative lock-times.
 number to permit soft forks, but they are treated as version 2 transactions
 by current software.)
 
-Dash Core 0.13.0 (protocol version 70213) introduced transaction version 3 as
+Lifetioncoin Core 0.13.0 (protocol version 70213) introduced transaction version 3 as
 part of the [DIP2 - Special Transactions](https://github.com/dashpay/dips/blob/master/dip-0002.md)
  implementation. Details of the changes introduced by
 this feature and currently implemented special transactions can be found in the
@@ -249,10 +249,10 @@ the [CompactSize section][section CompactSize unsigned integer].
 ##### JSON-RPC<!--noref--> Responses
 {% include helpers/subhead-links.md %}
 
-When retrieving transaction data via Dash Core RPCs (e.g. the `getrawtransaction` RPC),
+When retrieving transaction data via Lifetioncoin Core RPCs (e.g. the `getrawtransaction` RPC),
 the transaction data is returned in the following format.
 
-Version 1 and 2 Transaction Structure (prior to DIP2 activation in Dash Core v0.13.0):
+Version 1 and 2 Transaction Structure (prior to DIP2 activation in Lifetioncoin Core v0.13.0):
 {% highlight json %}
 {
   "txid": <string>,
@@ -264,7 +264,7 @@ Version 1 and 2 Transaction Structure (prior to DIP2 activation in Dash Core v0.
 }
 {% endhighlight %}
 
-Version 3 Transaction Structure (Dash Core v0.13.0+ and activated DIP2):
+Version 3 Transaction Structure (Lifetioncoin Core v0.13.0+ and activated DIP2):
 {% highlight json %}
 {
   "txid": <string>,
@@ -331,7 +331,7 @@ Each non-coinbase input spends an outpoint from a previous transaction.
 | 36       | previous_output  | outpoint             | The previous outpoint being spent.  See description of outpoint below.
 | *Varies* | script bytes     | compactSize uint     | The number of bytes in the signature script.  Maximum is 10,000 bytes.
 | *Varies* | signature script | char[]               | A script-language script which satisfies the conditions placed in the outpoint's pubkey script.  Should only contain data pushes; see the [signature script modification warning][].
-| 4        | sequence         | uint32_t             | Sequence number.  Default for Dash Core and almost all other programs is 0xffffffff.
+| 4        | sequence         | uint32_t             | Sequence number.  Default for Lifetioncoin Core and almost all other programs is 0xffffffff.
 
 {% endautocrossref %}
 
@@ -394,7 +394,7 @@ to a new pay-to-pubkey-hash (P2PKH) output.
 | ffffffff ................................. Sequence number: UINT32_MAX
 
 01 ......................................... Number of outputs
-| f0ca052a01000000 ......................... Duffs (49.99990000 Dash)
+| f0ca052a01000000 ......................... Duffs (49.99990000 Lifetioncoin)
 |
 | 19 ....................................... Bytes in pubkey script: 25
 | | 76 ..................................... OP_DUP
@@ -461,12 +461,12 @@ An itemized coinbase transaction:
 
 02 .................................... Output count
 | Transaction Output 1
-| | f20cbe0a00000000 .................... Duffs (1.80227314 Dash)
+| | f20cbe0a00000000 .................... Duffs (1.80227314 Lifetioncoin)
 | | 1976a9142cd46be3ceeacca983e0fea3
 | | b88f26b08a26c29b88ac ................ P2PKH script
 |
 | Transaction Output 2
-| | eb0cbe0a00000000 .................... Duffs (1.80227307 Dash)
+| | eb0cbe0a00000000 .................... Duffs (1.80227307 Lifetioncoin)
 | | 1976a914868180414905937a68fadeb0
 | | f33e64d102c9591a88ac ................ P2PKH script
 |
@@ -518,7 +518,7 @@ transaction types is maintained in the [DIP repository](https://github.com/dashp
 
 {% autocrossref %}
 
-*Added in protocol version 70213 of Dash Core as described by DIP3*
+*Added in protocol version 70213 of Lifetioncoin Core as described by DIP3*
 
 The Masternode Registration (ProRegTx) special transaction is used to join the
 masternode list by proving ownership of the 1000 DASH necessary to create a
@@ -676,7 +676,7 @@ ProRegTx Payload
 
 {% autocrossref %}
 
-*Added in protocol version 70213 of Dash Core as described by DIP3*
+*Added in protocol version 70213 of Lifetioncoin Core as described by DIP3*
 
 The Masternode Provider Update Service (ProUpServTx) special transaction is used
 to update the IP Address and port of a masternode. If a non-zero operatorReward
@@ -749,7 +749,7 @@ ProUpServTx Payload
 
 {% autocrossref %}
 
-*Added in protocol version 70213 of Dash Core as described by DIP3*
+*Added in protocol version 70213 of Lifetioncoin Core as described by DIP3*
 
 The Masternode Provider Update Registrar (ProUpRegTx) special transaction is used
 by a masternode owner to update masternode metadata (e.g. operator/voting key
@@ -830,7 +830,7 @@ ProRegTx Payload
 
 {% autocrossref %}
 
-*Added in protocol version 70213 of Dash Core as described by DIP3*
+*Added in protocol version 70213 of Lifetioncoin Core as described by DIP3*
 
 The Masternode Operator Revocation (ProUpRevTx) special transaction allows an
 operator to revoke their key in case of compromise or if they wish to terminate
@@ -892,7 +892,7 @@ ProUpRevTx Payload
 
 {% autocrossref %}
 
-*Added in protocol version 70213 of Dash Core as described by DIP4*
+*Added in protocol version 70213 of Lifetioncoin Core as described by DIP4*
 
 The Coinbase (CbTx) special transaction adds information to the block’s coinbase
 transaction that enables verification of the deterministic masternode list without
@@ -912,7 +912,7 @@ payload consists of the following data:
 
 Version History
 
-| CbTx Version | First Supported Protocol Version | Dash Core Version |  Notes |
+| CbTx Version | First Supported Protocol Version | Lifetioncoin Core Version |  Notes |
 | ---------- | ----------- | -------- | -------- |
 | 1 | 70213 | 0.13.0 | Enabled by activation of DIP3
 | 2 | 70214 | 0.14.0 | Enabled by activation of DIP8
@@ -974,7 +974,7 @@ Coinbase Transaction Payload
 
 {% autocrossref %}
 
-*Added in protocol version 70213 of Dash Core as described by DIP6*
+*Added in protocol version 70213 of Lifetioncoin Core as described by DIP6*
 
 **NOTE: This special transaction has no inputs and no outputs and thus also
 pays no fee.**
@@ -1074,10 +1074,10 @@ The raw transaction format and several peer-to-peer network messages use
 a type of variable-length integer to indicate the number of bytes in a
 following piece of data.
 
-Dash Core code and this document refers to these variable length
+Lifetioncoin Core code and this document refers to these variable length
 integers as compactSize. Many other documents refer to them as var_int
 or varInt, but this risks conflation with other variable-length integer
-encodings---such as the CVarInt class used in Dash Core for
+encodings---such as the CVarInt class used in Lifetioncoin Core for
 serializing data to disk.  Because it's used in the transaction format,
 the format of compactSize unsigned integers is part of the consensus
 rules.

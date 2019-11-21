@@ -11,12 +11,12 @@
 <polygon fill="white" stroke="none" points="-4,4 -4,-549 701,-549 701,4 -4,4"/>
 <text text-anchor="middle" x="348.5" y="-112.8" font-family="Sans" font-size="14.00"> </text>
 <text text-anchor="middle" x="348.5" y="-97.8" font-family="Sans" font-size="14.00"> </text>
-<text text-anchor="middle" x="348.5" y="-82.8" font-family="Sans" font-size="14.00">Alice broadcasts the bond to the Dash network immediately.</text>
+<text text-anchor="middle" x="348.5" y="-82.8" font-family="Sans" font-size="14.00">Alice broadcasts the bond to the Lifetioncoin network immediately.</text>
 <text text-anchor="middle" x="348.5" y="-67.8" font-family="Sans" font-size="14.00">She broadcasts the final version of the refund when she finishes work</text>
 <text text-anchor="middle" x="348.5" y="-52.8" font-family="Sans" font-size="14.00">or before the locktime. &#160;If she fails to broadcast before refund v1&#39;s time lock</text>
 <text text-anchor="middle" x="348.5" y="-37.8" font-family="Sans" font-size="14.00">expires, Bob can broadcast refund v1 to get a full refund.</text>
 <text text-anchor="middle" x="348.5" y="-22.8" font-family="Sans" font-size="14.00"> </text>
-<text text-anchor="middle" x="348.5" y="-7.8" font-family="Sans" font-size="14.00">Dash Micropayment Channels</text>
+<text text-anchor="middle" x="348.5" y="-7.8" font-family="Sans" font-size="14.00">Lifetioncoin Micropayment Channels</text>
 <g id="clust1" class="cluster"><title>cluster_alice</title>
 <polygon fill="none" stroke="black" points="0,-149 0,-478 131,-478 131,-149 0,-149"/>
 <text text-anchor="middle" x="65.5" y="-462.8" font-family="Sans" font-size="14.00">Alice&#39;s Computer</text>

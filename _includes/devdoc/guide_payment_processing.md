@@ -9,7 +9,7 @@ http://opensource.org/licenses/MIT.
 
 {% autocrossref %}
 <!-- __ -->
-<!-- https://dashpay.atlassian.net/wiki/spaces/DOC/pages/86278547/Dash+Payment+Processor-->
+<!-- https://dashpay.atlassian.net/wiki/spaces/DOC/pages/86278547/Lifetioncoin+Payment+Processor-->
 
 Payment processing encompasses the steps spenders and receivers perform
 to make and accept payments in exchange for products or services. The

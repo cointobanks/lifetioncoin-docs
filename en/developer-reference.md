@@ -5,7 +5,7 @@
 layout: base
 lang: en
 id: developer-reference
-title: "Developer Reference - Dash"
+title: "Developer Reference - Lifetioncoin"
 breadcrumbs:
 #  - bitcoin
   - dev docs
@@ -20,7 +20,7 @@ end_of_page: |
 
 <!-- This should be empty, but comment it out just in case: {% include helpers/vars.md %} -->
 
-# Dash Developer Reference
+# Lifetioncoin Developer Reference
 
 <p class="summary">Find technical details and API documentation.</p>
 

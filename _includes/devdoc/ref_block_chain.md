@@ -52,14 +52,14 @@ fe9f0864 ........................... Nonce
 
 {% autocrossref %}
 
-* **Version 1** was used by Dash for the Genesis Block only.
+* **Version 1** was used by Lifetioncoin for the Genesis Block only.
 
 * **[Version 2][v2 block]{:#term-v2-block}{:.term}** was introduced with
   the first block following the Genesis Block (January 2014). As described in
   BIP34, valid version 2 blocks require a [block height parameter in the
   coinbase][coinbase block height].
 
-<!-- Dash supported BIP34 from block 1
+<!-- Lifetioncoin supported BIP34 from block 1
   Also described in BIP34 are rules
   for rejecting certain blocks; based on those rules, Bitcoin Core 0.7.0
   and later versions began to reject version 2 blocks without the block
@@ -67,26 +67,26 @@ fe9f0864 ........................... Nonce
   reject new version 1 blocks three weeks later at block height 227,930.
 -->
 
-* **Version 3** blocks were introduced in Dash Core 0.11.2 (March 2015) as a
+* **Version 3** blocks were introduced in Lifetioncoin Core 0.11.2 (March 2015) as a
   soft fork (Block 244,834 was the first version 3 block).
   <!--Bitcoin Core 0.10.0 (February
   2015) as a soft fork. -->
   When the fork reach full enforcement, it required strict DER encoding of all
   ECDSA signatures in new blocks as described in BIP66. Transactions that do not
-  use strict DER encoding had previously been non-standard since Dash Core 0.8.0.
+  use strict DER encoding had previously been non-standard since Lifetioncoin Core 0.8.0.
 
 * **Version 4** blocks specified in BIP65 and introduced in Bitcoin Core 0.11.2
   (November 2015) as a soft fork became active in December 2015.  These blocks
   now support the new `OP_CHECKLOCKTIMEVERIFY` opcode described in that BIP.
 
 <!--
-* **Version 536870913** blocks were introduced in Dash Core 0.??? (February 2017)
+* **Version 536870913** blocks were introduced in Lifetioncoin Core 0.??? (February 2017)
   at block height 617,288.
 
-* **Version 536870912** blocks were introduced in Dash Core 0.??? ( 2017).
+* **Version 536870912** blocks were introduced in Lifetioncoin Core 0.??? ( 2017).
 -->
 The mechanism used for the version 2, 3, and 4 upgrades is commonly
-called IsSuperMajority() after the function added to Dash Core to
+called IsSuperMajority() after the function added to Lifetioncoin Core to
 manage those soft forking changes. See BIP34 for a full description of
 this method.
 
@@ -168,7 +168,7 @@ you might parse a decimal number in base-10 scientific notation:
 
 ![Quickly Converting nBits](/img/dev/en-nbits-quick-parse.svg)
 
-<!-- Source for paragraph below: Dash Core src/tests/arith_uint256_tests.cpp:
+<!-- Source for paragraph below: Lifetioncoin Core src/tests/arith_uint256_tests.cpp:
 num.SetCompact(0x04923456, &fNegative, &fOverflow);
 BOOST_CHECK_EQUAL(num.GetHex(), "0000000000000000000000000000000000000000000000000000000012345600");
 BOOST_CHECK_EQUAL(num.GetCompact(true), 0x04923456U);
@@ -179,20 +179,20 @@ original nBits implementation inherits properties from a signed data
 class, allowing the target threshold to be negative if the high bit of
 the significand is set. This is useless---the header hash is
 treated as an unsigned number, so it can never be equal to or lower than a
-negative target threshold. Dash Core deals with this in two ways:
+negative target threshold. Lifetioncoin Core deals with this in two ways:
 
-<!-- source for "Dash Core converts..." src/pow.cpp GetBlockProof() -->
+<!-- source for "Lifetioncoin Core converts..." src/pow.cpp GetBlockProof() -->
 
-* When parsing nBits, Dash Core converts a negative target
+* When parsing nBits, Lifetioncoin Core converts a negative target
   threshold into a target of zero, which the header hash can equal (in
   theory, at least).
 
-* When creating a value for nBits, Dash Core checks to see if it will
+* When creating a value for nBits, Lifetioncoin Core checks to see if it will
   produce an nBits which will be interpreted as negative; if so, it
   divides the significand by 256 and increases the exponent by 1 to
   produce the same number with a different encoding.
 
-Some examples taken from the Dash Core test cases:
+Some examples taken from the Lifetioncoin Core test cases:
 
 | nBits      |  Target          | Notes
 |------------|------------------|----------------
@@ -230,12 +230,12 @@ The first transaction in a block must be a [coinbase
 transaction][/en/glossary/coinbase-transaction]{:#term-coinbase-tx}{:.term} which should collect and
 spend any transaction fees paid by transactions included in this block.
 
-Until the coin limit (~18 million Dash) is hit, all blocks are entitled to
-receive a block subsidy of newly created Dash value. The newly created value
+Until the coin limit (~18 million Lifetioncoin) is hit, all blocks are entitled to
+receive a block subsidy of newly created Lifetioncoin value. The newly created value
 should be spent in the coinbase transaction.
 
-The block subsidy declines by ~7.1% per year until all Dash is mined.
-Subsidy calculations are performed by the Dash Core [GetBlockSubsidy()][block subsidy]
+The block subsidy declines by ~7.1% per year until all Lifetioncoin is mined.
+Subsidy calculations are performed by the Lifetioncoin Core [GetBlockSubsidy()][block subsidy]
 function.
 
 Together, the transaction fees and block subsidy are called the [block

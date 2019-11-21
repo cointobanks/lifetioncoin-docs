@@ -7,11 +7,11 @@ required:
     title_max_40_characters_no_formatting: Long-Living Masternode Quorum
 
     summary_max_255_characters_no_formatting: >
-        Long-Living Masternode Quorums (LLMQs) are a Dash innovation
+        Long-Living Masternode Quorums (LLMQs) are a Lifetioncoin innovation
         that enable masternodes to perform threshold signing of
         consensus-related messages (e.g. InstantSend transactions).
         LLMQs provide a more scalable, general use quorum system
-        than the ephemeral ones used prior to Dash Core version 0.14.
+        than the ephemeral ones used prior to Lifetioncoin Core version 0.14.
 
     synonyms_shown_in_glossary_capitalize_first_letter:
         - Long-Living Masternode Quorum
@@ -28,6 +28,6 @@ optional:
 
     links_html_or_markdown_style_capitalize_first_letter:
         - "[Masternode Quorums](/en/developer-guide#masternode-quorums) --- Developer Guide"
-        - "[Long-Living Masternode Quorums](https://github.com/dashpay/dips/blob/master/dip-0006.md) --- Dash DIP"
+        - "[Long-Living Masternode Quorums](https://github.com/dashpay/dips/blob/master/dip-0006.md) --- Lifetioncoin DIP"
 
 ---

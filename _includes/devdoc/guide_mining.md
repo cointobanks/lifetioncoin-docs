@@ -120,7 +120,7 @@ are used to keep ASIC hashers working at maximum capacity,
 
 {% autocrossref %}
 
-The simplest and earliest method was the now-deprecated Dash Core
+The simplest and earliest method was the now-deprecated Lifetioncoin Core
 `getwork` RPC, which constructs a header for the miner directly. Since a
 header only contains a single 4-byte nonce good for about 4 gigahashes,
 many modern miners need to make dozens or hundreds of `getwork` requests
@@ -133,7 +133,7 @@ a second.
 
 {% autocrossref %}
 
-An improved method is the Dash Core `getblocktemplate` RPC. This
+An improved method is the Lifetioncoin Core `getblocktemplate` RPC. This
 provides the mining software with much more information:
 
 1. The information necessary to construct a coinbase transaction

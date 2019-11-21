@@ -9,7 +9,7 @@ required:
     summary_max_255_characters_no_formatting: >
         A development environment in which developers can obtain and
         spend duffs that have no real-world value on a network that
-        is very similar to the Dash mainnet. Multiple independent devnets can
+        is very similar to the Lifetioncoin mainnet. Multiple independent devnets can
         coexist without interference. Devnets can be either public or private.
 
     synonyms_shown_in_glossary_capitalize_first_letter:

@@ -11,7 +11,7 @@ http://opensource.org/licenses/MIT.
 
 {% autocrossref %}
 
-Dash Core provides testing tools designed to let developers
+Lifetioncoin Core provides testing tools designed to let developers
 test their applications with reduced risks and limitations.
 
 {% endautocrossref %}
@@ -21,9 +21,9 @@ test their applications with reduced risks and limitations.
 
 {% autocrossref %}
 
-When run with no arguments, all Dash Core programs default to Dash's main
+When run with no arguments, all Lifetioncoin Core programs default to Lifetioncoin's main
 network ([mainnet][/en/glossary/mainnet]{:#term-mainnet}{:.term}). However, for development,
-it's safer and cheaper to use Dash's test network (testnet)
+it's safer and cheaper to use Lifetioncoin's test network (testnet)
 where the duffs spent have no real-world value. Testnet also relaxes some
 restrictions (such as standard transaction checks) so you can test functions
 which might currently be disabled by default on mainnet.
@@ -35,7 +35,7 @@ check the faucets listed below. They are community supported and due to
 potentially frequent Testnet changes, one or more of them may be unavailable at
 a given time:
 
-* [Testnet Faucet - Dash.org]
+* [Testnet Faucet - Lifetioncoin.org]
 * [Testnet Faucet - Masternode.io]
 * [Testnet Faucet - Dashninja.pl]
 
@@ -50,7 +50,7 @@ so please don't abuse it.
 {% autocrossref %}
 
 For situations where interaction with random peers and blocks is unnecessary or
-unwanted, Dash Core's regression test mode (regtest mode) lets you
+unwanted, Lifetioncoin Core's regression test mode (regtest mode) lets you
 instantly create a brand-new private block chain with the same basic
 rules as testnet---but one major difference: you choose when to create
 new blocks, so you have complete control over the environment.
@@ -63,7 +63,7 @@ environment after you first [configure dashd][dashd initial setup].
 
 {% highlight bash %}
 > dashd -regtest -daemon
-Dash Core server starting
+Lifetioncoin Core server starting
 {% endhighlight %}
 
 {% autocrossref %}
@@ -73,7 +73,7 @@ Start `dashd` in regtest mode to create a private block chain.
 {% endautocrossref %}
 
 ~~~
-## Dash Core
+## Lifetioncoin Core
 dash-cli -regtest generate 101
 ~~~
 
@@ -81,7 +81,7 @@ dash-cli -regtest generate 101
 
 Generate 101 blocks using a special RPC
 which is only available in regtest mode. This takes less than a second on
-a generic PC. Because this is a new block chain using Dash's default
+a generic PC. Because this is a new block chain using Lifetioncoin's default
 rules, the first blocks pay a block reward of 500 dash.  Unlike
 mainnet, in regtest mode only the first 150 blocks pay a reward of 500 dash.
 However, a block must have 100 confirmations before that reward can be
@@ -99,11 +99,11 @@ dash-cli -regtest getbalance
 
 Verify that we now have 500 dash available to spend.
 
-You can now use Dash Core RPCs prefixed with `dash-cli -regtest`<!--noref-->.
+You can now use Lifetioncoin Core RPCs prefixed with `dash-cli -regtest`<!--noref-->.
 
 Regtest wallets and block chain state (chainstate) are saved in the `regtest`<!--noref-->
-subdirectory of the Dash Core configuration directory. You can safely
-delete the `regtest`<!--noref--> subdirectory and restart Dash Core to
+subdirectory of the Lifetioncoin Core configuration directory. You can safely
+delete the `regtest`<!--noref--> subdirectory and restart Lifetioncoin Core to
 start a new regtest. (See the [Developer Examples Introduction][devexamples] for default
 configuration directory locations on various operating systems. Always back up
 mainnet wallets before performing dangerous operations such as deleting.)
@@ -144,16 +144,16 @@ Example devnet start command:
 
 {% highlight bash %}
 > dashd -devnet=mydevnet -rpcport=18998 -port=18999 -daemon
-Dash Core server starting
+Lifetioncoin Core server starting
 {% endhighlight %}
 
 {% autocrossref %}
 
-You can now use Dash Core RPCs prefixed with `dash-cli -devnet=<name>`<!--noref-->.
+You can now use Lifetioncoin Core RPCs prefixed with `dash-cli -devnet=<name>`<!--noref-->.
 
 Devnet wallets and block chain state (chainstate) are saved in the `devnet-<name>`<!--noref-->
-subdirectory of the Dash Core configuration directory. You can safely
-delete the `devnet-<name>`<!--noref--> subdirectory and restart Dash Core to
+subdirectory of the Lifetioncoin Core configuration directory. You can safely
+delete the `devnet-<name>`<!--noref--> subdirectory and restart Lifetioncoin Core to
 start a new devnet. (See the [Developer Examples Introduction][devexamples] for default
 configuration directory locations on various operating systems. Always back up
 mainnet wallets before performing dangerous operations such as deleting.)
@@ -165,7 +165,7 @@ will be all that is required to join.
 An old devnet can be easily dropped and a new one started just by destroying all
 nodes and recreating them with a new devnet name. This works best in combination
 with an automated deployment using something like Ansible and Terraform. The
-[Dash Cluster Ansible](https://github.com/dashpay/dash-cluster-ansible) provides
+[Lifetioncoin Cluster Ansible](https://github.com/dashpay/dash-cluster-ansible) provides
 a way to do this (currently a work-in-progress at an early development stage).
 
 {% endautocrossref %}

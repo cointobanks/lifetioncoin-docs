@@ -11,11 +11,11 @@ http://opensource.org/licenses/MIT.
 
 {% autocrossref %}
 
-This section describes the Dash P2P network protocol (but it is [not a
+This section describes the Lifetioncoin P2P network protocol (but it is [not a
 specification][]). It does not describe the
 [BIP70 payment protocol][/en/glossary/payment-protocol], the
 [GetBlockTemplate mining protocol][section getblocktemplate], or any
-network protocol never implemented in an official version of Dash Core.
+network protocol never implemented in an official version of Lifetioncoin Core.
 
 All peer-to-peer communication occurs entirely over TCP.
 
@@ -31,7 +31,7 @@ integers mentioned in this section are transmitted in little-endian order.
 
 {% autocrossref %}
 
-The following constants and defaults are taken from Dash Core's
+The following constants and defaults are taken from Lifetioncoin Core's
 [chainparams.cpp][core chainparams.cpp] source code file.
 
 | Network | Default Port | Magic Value | [Start String][/en/glossary/start-string]{:#term-start-string}{:.term} | Max nBits
@@ -45,12 +45,12 @@ Note: the testnet start string and nBits above are for testnet3.
 
 Command line parameters can change what port a node listens on (see
 `-help`). Start strings are hardcoded constants that appear at the start
-of all messages sent on the Dash network; they may also appear in
-data files such as Dash Core's block database. The Magic Value and nBits
+of all messages sent on the Lifetioncoin network; they may also appear in
+data files such as Lifetioncoin Core's block database. The Magic Value and nBits
 displayed above are in big-endian order; they're sent over the network in
 little-endian order. The Start String is simply the endian reversed Magic Value.
 
-Dash Core's [chainparams.cpp][core chainparams.cpp] also includes
+Lifetioncoin Core's [chainparams.cpp][core chainparams.cpp] also includes
 other constants useful to programs, such as the hash of the genesis
 blocks for the different networks.
 
@@ -66,25 +66,25 @@ with the most recent versions listed first. (If you know of a protocol
 version that implemented a major change but which is not listed here,
 please [open an issue][docs issue].)
 
-As of Dash Core 0.14.0, the most recent protocol version is 70215.
+As of Lifetioncoin Core 0.14.0, the most recent protocol version is 70215.
 
 | Version | Initial Release                    | Major Changes
 |---------|------------------------------------|--------------
-| 70215  | Dash Core 0.14.0.1 <br>(May 2019)  | • None (Governance bugfix only)
-| 70214  | Dash Core 0.14.0.0 <br>(May 2019)  | • Long-living Masternode Quorums<br>• ChainLocks<br>• PrivateSend improvements<br>• Experimental LLMQ InstantSend<br>• Bitcoin Core 0.15 backports
-| 70213  | Dash Core 0.13.0.x <br>(Jan 2019)  | • Special Transactions<br>• Deterministic Masternode List<br>• Coinbase Special Transaction<br>• Automatic InstantSend
-| 70210  | Dash Core 0.12.3.x <br>(July 2018)  | • Named Devnets<br>• New signature format / Spork 6 addition<br>• Bitcoin Core 0.13/0.14 backports<br>• [BIP90][]: Buried deployments<br>• [BIP147][]: NULLYDUMMY enforcement<br>• [BIP152][] Compact Blocks<br>• Transaction version increased to 2<br>• Zero fee transactions removed<br>• Pruning in Lite Mode
-| 70208  | Dash Core 0.12.2.x <br>(Nov 2017)  | • [DIP1][] (2MB blocks)<br>• Fee reduction (10x)<br>• InstantSend fix<br>• PrivateSend improvements<br>• _Experimental_ HD wallet<br>• Local Masternode support removed
-| 70206  | Dash Core 0.12.1.x <br>(Mar 2017)  | • Switch to Bitcoin Core 0.12.1<br>• BIP-0065 (CheckLockTimeVerify)<br>• BIP-0112 (CheckSequenceVerify)
-| 70103  | Dash Core 0.12.0.x <br>(Aug 2015)  | • Switch to Bitcoin Core 0.10<br>• Decentralized budget system<br>• New IX implementation
-| 70076  | Dash Core 0.11.2.x <br>(Mar 2015)  | • Masternode enhancements<br>• Mining/relay policy enhancements<br>• BIP-66 - strict DER encoding for signatures
-| 70066  | Dash Core 0.11.1.x <br>(Feb 2015)  | • InstantX fully implemented<br>• Spork fully implemented<br>• Masternode payment updates<br>• Rebrand to Dash (0.11.1.26)
-| 70052  | Dash Core 0.11.0.x <br>(Jan 2015)  | • Switch from fork of Litecoin 0.8 to Bitcoin 0.9.3<br>• Rebrand to Darkcoin Core
-| 70051  | Dash Core 0.10.0.x <br>(Sep 2014)  | • Release of the originally closed source implementation of DarkSend
-| 70002  | Dash Core 0.9.0.x <br>(Mar 2014)   | • Masternode implementation<br>• Rebrand to Darkcoin
-| 70002  | Dash Core 0.8.7 <br>(Jan 2014)     | Initial release of Dash (branded XCoin) as a fork of Litecoin 0.8
+| 70215  | Lifetioncoin Core 0.14.0.1 <br>(May 2019)  | • None (Governance bugfix only)
+| 70214  | Lifetioncoin Core 0.14.0.0 <br>(May 2019)  | • Long-living Masternode Quorums<br>• ChainLocks<br>• PrivateSend improvements<br>• Experimental LLMQ InstantSend<br>• Bitcoin Core 0.15 backports
+| 70213  | Lifetioncoin Core 0.13.0.x <br>(Jan 2019)  | • Special Transactions<br>• Deterministic Masternode List<br>• Coinbase Special Transaction<br>• Automatic InstantSend
+| 70210  | Lifetioncoin Core 0.12.3.x <br>(July 2018)  | • Named Devnets<br>• New signature format / Spork 6 addition<br>• Bitcoin Core 0.13/0.14 backports<br>• [BIP90][]: Buried deployments<br>• [BIP147][]: NULLYDUMMY enforcement<br>• [BIP152][] Compact Blocks<br>• Transaction version increased to 2<br>• Zero fee transactions removed<br>• Pruning in Lite Mode
+| 70208  | Lifetioncoin Core 0.12.2.x <br>(Nov 2017)  | • [DIP1][] (2MB blocks)<br>• Fee reduction (10x)<br>• InstantSend fix<br>• PrivateSend improvements<br>• _Experimental_ HD wallet<br>• Local Masternode support removed
+| 70206  | Lifetioncoin Core 0.12.1.x <br>(Mar 2017)  | • Switch to Bitcoin Core 0.12.1<br>• BIP-0065 (CheckLockTimeVerify)<br>• BIP-0112 (CheckSequenceVerify)
+| 70103  | Lifetioncoin Core 0.12.0.x <br>(Aug 2015)  | • Switch to Bitcoin Core 0.10<br>• Decentralized budget system<br>• New IX implementation
+| 70076  | Lifetioncoin Core 0.11.2.x <br>(Mar 2015)  | • Masternode enhancements<br>• Mining/relay policy enhancements<br>• BIP-66 - strict DER encoding for signatures
+| 70066  | Lifetioncoin Core 0.11.1.x <br>(Feb 2015)  | • InstantX fully implemented<br>• Spork fully implemented<br>• Masternode payment updates<br>• Rebrand to Lifetioncoin (0.11.1.26)
+| 70052  | Lifetioncoin Core 0.11.0.x <br>(Jan 2015)  | • Switch from fork of Litecoin 0.8 to Bitcoin 0.9.3<br>• Rebrand to Darkcoin Core
+| 70051  | Lifetioncoin Core 0.10.0.x <br>(Sep 2014)  | • Release of the originally closed source implementation of DarkSend
+| 70002  | Lifetioncoin Core 0.9.0.x <br>(Mar 2014)   | • Masternode implementation<br>• Rebrand to Darkcoin
+| 70002  | Lifetioncoin Core 0.8.7 <br>(Jan 2014)     | Initial release of Lifetioncoin (branded XCoin) as a fork of Litecoin 0.8
 
-Historical Bitcoin protocol versions for reference shown below since Dash is a
+Historical Bitcoin protocol versions for reference shown below since Lifetioncoin is a
 fork of Bitcoin Core.
 
 | Version | Initial Release                    | Major Changes
@@ -117,7 +117,7 @@ The message header format is:
 |-------|--------------|-----------|-------------
 | 4     | start string | char[4]   | Magic bytes indicating the originating network; used to seek to next message when stream state is unknown.
 | 12    | command name | char[12]  | ASCII string which identifies what message type is contained in the payload.  Followed by nulls (0x00) to pad out byte count; for example: `version\0\0\0\0\0`.
-| 4     | payload size | uint32_t  | Number of bytes in payload.  The current maximum number of bytes ([`MAX_SIZE`][max_size]) allowed in the payload by Dash Core is 32 MiB---messages with a payload size larger than this will be dropped or rejected.
+| 4     | payload size | uint32_t  | Number of bytes in payload.  The current maximum number of bytes ([`MAX_SIZE`][max_size]) allowed in the payload by Lifetioncoin Core is 32 MiB---messages with a payload size larger than this will be dropped or rejected.
 | 4     | checksum     | char[4]   | *Added in protocol version 209.* <br><br>First 4 bytes of SHA256(SHA256(payload)) in internal byte order.<br /><br /> If payload is empty, as in `verack` and `getaddr` messages, the checksum is always 0x5df6e0e2 (SHA256(SHA256(\<empty string>))).
 
 The following example is an annotated hex dump of a mainnet message
@@ -194,7 +194,7 @@ The deprecated type identifiers are:
 | 27               | [`MSG_QUORUM_DEBUG_STATUS`][msg_quorum_debug_status]{:#term-msg_quorum_debug_status}{:.term}                            | **Deprecated in 0.14.0**<br><br>Temporarily used on Testnet only.
 
 Type identifier zero and type identifiers greater than twenty are reserved
-for future implementations. Dash Core ignores all inventories with
+for future implementations. Lifetioncoin Core ignores all inventories with
 one of these unknown types.
 
 {% endautocrossref %}
@@ -227,7 +227,7 @@ different reasons:
 
 {% autocrossref %}
 
-*Added in protocol version 70209 of Dash Core as described by BIP152*
+*Added in protocol version 70209 of Lifetioncoin Core as described by BIP152*
 
 The `blocktxn` message sends requested block transactions to a node which
 previously requested them with a `getblocktxn` message. It is defined as a message
@@ -285,7 +285,7 @@ Transaction(s)
 | | 02 ..................................... Number of outputs: 02
 | |
 | | Transaction output #1
-| | | 0be0f50500000000 ..................... Duffs (0.99999755 Dash)
+| | | 0be0f50500000000 ..................... Duffs (0.99999755 Lifetioncoin)
 | | |
 | | | 19 ................................... Bytes in pubkey script: 25
 | | | | 76 ................................. OP_DUP
@@ -308,7 +308,7 @@ Transaction(s)
 
 {% autocrossref %}
 
-*Added in protocol version 70209 of Dash Core as described by BIP152*
+*Added in protocol version 70209 of Lifetioncoin Core as described by BIP152*
 
 The `cmpctblock` message is a reply to a `getdata` message which
 requested a block using the inventory type `MSG_CMPCT_BLOCK`. If the
@@ -405,7 +405,7 @@ Prefilled Transactions
 | | 04 ..................................... Number of outputs: 04
 | |
 | | Transaction output #1
-| | | ffe5654200000000 ..................... Duffs (11.13974271 Dash)
+| | | ffe5654200000000 ..................... Duffs (11.13974271 Lifetioncoin)
 | | |
 | | | 19 ................................... Bytes in pubkey script: 25
 | | | | 76 ................................. OP_DUP
@@ -480,7 +480,7 @@ d39f608a7775b537729884d4e6633bb2
 
 {% autocrossref %}
 
-*Added in protocol version 70209 of Dash Core as described by BIP152*
+*Added in protocol version 70209 of Lifetioncoin Core as described by BIP152*
 
 The `getblocktxn` message requests a `blocktxn` message for any transactions
 that it has not seen after a compact block is received. It is defined as a
@@ -1038,11 +1038,11 @@ identical to the `inv` message; only the message header differs.
 The `tx` message transmits a single transaction in the raw transaction
 format. It can be sent in a variety of situations;
 
-* **Transaction Response:** Dash Core will send it in response to a
+* **Transaction Response:** Lifetioncoin Core will send it in response to a
   `getdata` message that requests the transaction with an inventory
   type of `MSG_TX`.
 
-* **MerkleBlock Response:** Dash Core will send it in response to a
+* **MerkleBlock Response:** Lifetioncoin Core will send it in response to a
   `getdata` message that requests a merkle block with an inventory type
   of `MSG_MERKLEBLOCK`. (This is in addition to sending a `merkleblock`
   message.) Each `tx` message in this case provides a matched
@@ -1098,7 +1098,7 @@ An `addr` message may also be sent in response to a `getaddr` message.
 | Bytes      | Name             | Data Type          | Description
 |------------|------------------|--------------------|----------------
 | *Varies*   | IP address count | compactSize uint   | The number of IP address entries up to a maximum of 1,000.
-| *Varies*   | IP addresses     | network IP address | IP address entries.  See the table below for the format of a Dash network IP address.
+| *Varies*   | IP addresses     | network IP address | IP address entries.  See the table below for the format of a Lifetioncoin network IP address.
 
 Each encapsulated network IP address currently uses the following structure:
 
@@ -1107,7 +1107,7 @@ Each encapsulated network IP address currently uses the following structure:
 | 4     | time       | uint32    | *Added in protocol version 31402.* <br><br>A time in Unix epoch time format.  Nodes advertising their own IP address set this to the current time.  Nodes advertising IP addresses they've connected to set this to the last time they connected to that node.  Other nodes just relaying the IP address should not change the time.  Nodes can use the time field to avoid relaying old `addr` messages.  <br><br>Malicious nodes may change times or even set them in the future.
 | 8     | services   | uint64_t  | The services the node advertised in its `version` message.
 | 16    | IP address | char      | IPv6 address in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses][]
-| 2     | port       | uint16_t  | Port number in **big endian byte order**.  Note that Dash Core will only connect to nodes with non-standard port numbers as a last resort for finding peers.  This is to prevent anyone from trying to use the network to disrupt non-Dash services that run on other ports.
+| 2     | port       | uint16_t  | Port number in **big endian byte order**.  Note that Lifetioncoin Core will only connect to nodes with non-standard port numbers as a last resort for finding peers.  This is to prevent anyone from trying to use the network to disrupt non-Lifetioncoin services that run on other ports.
 
 The following annotated hexdump shows part of an `addr` message. (The
 message header has been omitted and the actual IP address has been
@@ -1133,11 +1133,11 @@ d91f4854 ........................... Epoch time: 1414012889
 {% autocrossref %}
 
 *Added in protocol version 311.*
-*Removed by Bitcoin in protocol version 70013, but retained by Dash.*
+*Removed by Bitcoin in protocol version 70013, but retained by Lifetioncoin.*
 
 The `alert` message warns nodes of problems that may affect them or the
 rest of the network. Each `alert` message is signed using a key controlled
-by respected community members, mostly Dash Core developers.
+by respected community members, mostly Lifetioncoin Core developers.
 
 To ensure all nodes can validate and forward `alert` messages,
 encapsulation is used. Developers create an alert using the data
@@ -1223,12 +1223,12 @@ c42c13810ffcae14995bb648340219e3
 723326e4e8a4f1 ..................... Signature
 {% endhighlight %}
 
-**Alert key compromise:** Dash Core's source code defines a
+**Alert key compromise:** Lifetioncoin Core's source code defines a
 particular set of alert parameters that can be used to notify users that
 the alert signing key has been compromised and that they should upgrade
 to get a new alert public key. Once a signed alert containing those
 parameters has been received, no other alerts can cancel or override it.
-See the `ProcessAlert()` function in the Dash Core [alert.cpp][core
+See the `ProcessAlert()` function in the Lifetioncoin Core [alert.cpp][core
 alert.cpp] source code for the parameters of this message.
 
 {% endautocrossref %}
@@ -1286,7 +1286,7 @@ previously-set bloom filter.  This also undoes the effect of setting the
 relay field in the `version` message to 0, allowing unfiltered access to
 `inv` messages announcing new transactions.
 
-Dash Core does not require a `filterclear` message before a
+Lifetioncoin Core does not require a `filterclear` message before a
 replacement filter is loaded with `filterload`.  It also doesn't require
 a `filterload` message before a `filterclear` message.
 
@@ -1391,7 +1391,7 @@ function][murmur3].
 ![Warning icon](/img/icons/icon_warning.svg)
 **Warning:** the Murmur3 hash function has separate 32-bit and 64-bit
 versions that produce different results for the same input.  Only the
-32-bit Murmur3 version is used with Dash bloom filters.
+32-bit Murmur3 version is used with Lifetioncoin bloom filters.
 
 The data to be hashed can be any transaction element which the bloom
 filter can match. See the next subsection for the list of transaction
@@ -1399,7 +1399,7 @@ elements checked against the filter. The largest element which can be
 matched is a script data push of 520 bytes, so the data should never
 exceed 520 bytes.
 
-The example below from Dash Core [bloom.cpp][core bloom.cpp hash] combines
+The example below from Lifetioncoin Core [bloom.cpp][core bloom.cpp hash] combines
 all the steps above to create the hash function template. The seed is
 the first parameter; the data to be hashed is the second parameter. The
 result is a uint32\_t modulo the size of the bit field in bits.
@@ -1460,7 +1460,7 @@ example, TXIDs will be in internal byte order).
   if the `BLOOM_UPDATE_P2PUBKEY_ONLY` flag was set. See the subsection
   below for details.)
 
-As of  Dash Core 0.14.0, elements in the extra payload section of DIP2-based
+As of  Lifetioncoin Core 0.14.0, elements in the extra payload section of DIP2-based
 special transactions are also compared against bloom filters.
 
 The following annotated hexdump of a transaction is from the [raw
@@ -1603,7 +1603,7 @@ header has been omitted.)
 *Added in protocol version 60001 as described by BIP31.*
 
 The `pong` message replies to a `ping` message, proving to the pinging
-node that the ponging node is still alive. Dash Core will, by
+node that the ponging node is still alive. Lifetioncoin Core will, by
 default, disconnect from any clients which have not responded to a
 `ping` message within 20 minutes.
 
@@ -1702,7 +1702,7 @@ header has been omitted.)
 
 {% autocrossref %}
 
-*Added in protocol version 70209 of Dash Core as described by BIP152*
+*Added in protocol version 70209 of Lifetioncoin Core as described by BIP152*
 
 The `sendcmpct` message tells the receiving peer whether or not to announce new
 blocks using a `cmpctblock` message. It also sends the compact block protocol
@@ -1754,7 +1754,7 @@ header has been omitted.)
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 The `senddsq` message is used to notify a peer whether or not to send `dsq` messages.
 This allows clients that are not interested in PrivateSend mixing (e.g. mobile
@@ -1815,7 +1815,7 @@ Sporks (per [`src/spork.h`][spork.h])
 | 10001 | 2 | `INSTANTSEND_ENABLED` | Turns on and off InstantSend network wide
 | 10002 | 3 | `INSTANTSEND_BLOCK_FILTERING` | Turns on and off InstantSend block filtering
 | 10004 | 5 | `INSTANTSEND_MAX_VALUE` | Controls the max value for an InstantSend transaction (currently 2000 dash)
-| 10005 | 6 | `NEW_SIGS` | Turns on and off new signature format for Dash-specific messages
+| 10005 | 6 | `NEW_SIGS` | Turns on and off new signature format for Lifetioncoin-specific messages
 | 10008 | 9 | `SUPERBLOCKS_ENABLED` | Superblocks are enabled (10% of the block reward allocated to fund the dash treasury for funding approved proposals)
 | 10011 | 12 | `RECONSIDER_BLOCKS` | Forces reindex of a specified number of blocks to recover from unintentional network forks
 | 10014 | 15 | `DETERMINISTIC_MNS_ENABLED` | Deterministic masternode lists are enabled
@@ -1825,15 +1825,15 @@ Sporks (per [`src/spork.h`][spork.h])
 | 10019 | 20 | `SPORK_20_INSTANTSEND_LLMQ_BASED` | Enable LLMQ-based InstantSend.
 | | | |
 | | | **Removed Sporks** |
-| _10007_ | _8_ | _`MASTERNODE_PAYMENT_ENFORCEMENT`_ | _Removed in Dash Core 0.14.0.<br>Requires masternodes to be paid by miners when blocks are processed_
-| _10009_ | _10_ | _`MASTERNODE_PAY_UPDATED_NODES`_ | _Removed in Dash Core 0.14.0.<br>Only current protocol version masternode's will be paid (not older nodes)_
-| _10012_ | _13_ | _`OLD_SUPERBLOCK_FLAG`_ | _Removed in Dash Core 0.12.3.<br>No network function since block 614820_
-| _10013_ | _14_ | _`REQUIRE_SENTINEL_FLAG`_ | _Removed in Dash Core 0.14.0.<br>Only masternode's running sentinel will be paid_
-| _10017_ | _18_ | _`QUORUM_DEBUG_ENABLED`_ | _Removed in Dash Core 0.14.0.<br><br>Temporarily used on Testnet only quorum debugging._
+| _10007_ | _8_ | _`MASTERNODE_PAYMENT_ENFORCEMENT`_ | _Removed in Lifetioncoin Core 0.14.0.<br>Requires masternodes to be paid by miners when blocks are processed_
+| _10009_ | _10_ | _`MASTERNODE_PAY_UPDATED_NODES`_ | _Removed in Lifetioncoin Core 0.14.0.<br>Only current protocol version masternode's will be paid (not older nodes)_
+| _10012_ | _13_ | _`OLD_SUPERBLOCK_FLAG`_ | _Removed in Lifetioncoin Core 0.12.3.<br>No network function since block 614820_
+| _10013_ | _14_ | _`REQUIRE_SENTINEL_FLAG`_ | _Removed in Lifetioncoin Core 0.14.0.<br>Only masternode's running sentinel will be paid_
+| _10017_ | _18_ | _`QUORUM_DEBUG_ENABLED`_ | _Removed in Lifetioncoin Core 0.14.0.<br><br>Temporarily used on Testnet only quorum debugging._
 
 To verify `vchSig`, compare the hard-coded spork public key (`strSporkPubKey`
 from [`src/chainparams.cpp`][spork pubkey]) with the public key recovered from
-the `spork` message's hash and `vchSig` value (implementation details for Dash
+the `spork` message's hash and `vchSig` value (implementation details for Lifetioncoin
 Core can be found in `CPubKey::RecoverCompact`). The hash is a double SHA-256 hash of:
 
 * The spork magic message (`"DarkCoin Signed Message:\n"`)
@@ -1901,15 +1901,15 @@ that signs the `mnauth_challenge` with their BLS operator key.
 | 4        | version               | int32_t          | Required                                 | The highest protocol version understood by the transmitting node.  See the [protocol version section][section protocol versions].
 | 8        | services              | uint64_t         | Required                                 | The services supported by the transmitting node encoded as a bitfield.  See the list of service codes below.
 | 8        | timestamp             | int64_t          | Required                                 | The current Unix epoch time according to the transmitting node's clock.  Because nodes will reject blocks with timestamps more than two hours in the future, this field can help other nodes to determine that their clock is wrong.
-| 8        | addr_recv services    | uint64_t         | Required                                 | *Added in protocol version 106.* <br><br>The services supported by the receiving node as perceived by the transmitting node.  Same format as the 'services' field above. Dash Core will attempt to provide accurate information.
-| 16       | addr_recv IP address  | char             | Required                                 | *Added in protocol version 106.* <br><br>The IPv6 address of the receiving node as perceived by the transmitting node in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses][]. Dash Core will attempt to provide accurate information.
+| 8        | addr_recv services    | uint64_t         | Required                                 | *Added in protocol version 106.* <br><br>The services supported by the receiving node as perceived by the transmitting node.  Same format as the 'services' field above. Lifetioncoin Core will attempt to provide accurate information.
+| 16       | addr_recv IP address  | char             | Required                                 | *Added in protocol version 106.* <br><br>The IPv6 address of the receiving node as perceived by the transmitting node in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses][]. Lifetioncoin Core will attempt to provide accurate information.
 | 2        | addr_recv port        | uint16_t         | Required                                 | *Added in protocol version 106.* <br><br>The port number of the receiving node as perceived by the transmitting node in **big endian byte order**.
 | 8        | addr_trans services   | uint64_t         | Required                                 | The services supported by the transmitting node.  Should be identical to the 'services' field above.
 | 16       | addr_trans IP address | char             | Required                                 | The IPv6 address of the transmitting node in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses][].  Set to ::ffff:127.0.0.1 if unknown.
 | 2        | addr_trans port       | uint16_t         | Required                                 | The port number of the transmitting node in **big endian byte order**.
 | 8        | nonce                 | uint64_t         | Required                                 | A random nonce which can help a node detect a connection to itself.  If the nonce is 0, the nonce field is ignored.  If the nonce is anything else, a node should terminate the connection on receipt<!--noref--> of a `version` message with a nonce it previously sent.
 | *Varies* | user_agent bytes      | compactSize uint | Required                                 | Number of bytes in following user\_agent field.  If 0x00, no user agent field is sent.
-| *Varies* | user_agent            | string           | Required if user_agent bytes > 0         | *Renamed in protocol version 60000.* <br><br>User agent as defined by BIP14. Previously called subVer.<br><br>Dash Core limits the length to 256 characters.
+| *Varies* | user_agent            | string           | Required if user_agent bytes > 0         | *Renamed in protocol version 60000.* <br><br>User agent as defined by BIP14. Previously called subVer.<br><br>Lifetioncoin Core limits the length to 256 characters.
 | 4        | start_height          | int32_t          | Required                                 | The height of the transmitting node's best block chain or, in the case of an SPV client, best block header chain.
 | 1        | relay                 | bool             | Optional                                 | *Added in protocol version 70001 as described by BIP37.* <br><br>Transaction relay flag.  If 0x00, no `inv` messages or `tx` messages announcing new transactions should be sent to this client until it sends a `filterload` message or `filterclear` message.  If the relay field is not present or is set to 0x01, this node wants `inv` messages and `tx` messages announcing new transactions.
 | 32       | mnauth_challenge      | uint256          | Optional                                 | *Added in protocol version 70214* <br><br>A challenge to be signed by the receiving masternode. The response is returned via a `mnauth` message following the `verack` message.
@@ -1921,8 +1921,8 @@ The following service identifiers have been assigned.
 |-------|--------------|---------------
 | 0x00  | *Unnamed*    | This node is not a full node.  It may not be able to provide any data except for the transactions it originates.
 | 0x01  | NODE_NETWORK | This is a full node and can be asked for full blocks.  It should implement all protocol features available in its self-reported protocol version.
-| 0x02  | NODE_GETUTXO | This node is capable of responding to the getutxo protocol request. *Dash Core does not support this service.*
-| 0x04  | NODE_BLOOM | This node is capable and willing to handle bloom-filtered connections.  Dash Core nodes used to support this by default, without advertising this bit, but no longer do as of protocol version 70201 (= NO_BLOOM_VERSION)
+| 0x02  | NODE_GETUTXO | This node is capable of responding to the getutxo protocol request. *Lifetioncoin Core does not support this service.*
+| 0x04  | NODE_BLOOM | This node is capable and willing to handle bloom-filtered connections.  Lifetioncoin Core nodes used to support this by default, without advertising this bit, but no longer do as of protocol version 70201 (= NO_BLOOM_VERSION)
 
 The following annotated hexdump shows a `version` message. (The
 message header has been omitted and the actual IP addresses have been
@@ -1944,7 +1944,7 @@ replaced with [RFC5737][] reserved IP addresses.)
 128035cbc97953f8 ............................ Nonce
 
 12 .......................................... Bytes in user agent string: 18
-2f4461736820436f72653a302e31322e312e352f..... User agent: /Dash Core:0.14.0/
+2f4461736820436f72653a302e31322e312e352f..... User agent: /Lifetioncoin Core:0.14.0/
 
 851f0b00 .................................... Start height: 76944
 01 .......................................... Relay flag: true
@@ -1962,7 +1962,7 @@ b5bd82b3656493484556689640a91357 ............ Masternode Auth. Challenge
 
 {% autocrossref %}
 
-The following network messages all help control the InstantSend feature of Dash.
+The following network messages all help control the InstantSend feature of Lifetioncoin.
 InstantSend uses the masternode network to lock transaction inputs and enable
 secure, instantaneous transactions. For additional details, refer to
 the Developer Guide [InstantSend section](developer-guide#instantsend<!--noref-->).
@@ -1977,7 +1977,7 @@ the Developer Guide [InstantSend section](developer-guide#instantsend<!--noref--
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 The `clsig` message is used to indicate a successful ChainLock for the designated
 block height. The Chainlock ensures that no other blocks can replace the one with
@@ -2023,7 +2023,7 @@ dcd5497d105932e609016dac075f02df
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 The `islock` message is used to provide details of transactions that have been
 locked by LLMQ-based InstantSend. The message includes the details of all
@@ -2138,7 +2138,7 @@ a0632a250d64ea507ce5e1d1f1983aae
 {% autocrossref %}
 
 The following network messages all help control the PrivateSend (formerly
-DarkSend) coin mixing features built in to Dash and facilitated by the
+DarkSend) coin mixing features built in to Lifetioncoin and facilitated by the
 masternode network.
 
 Since the messages are all related to a single process, this diagram shows them
@@ -2165,7 +2165,7 @@ operates in two ways:
 2. When sent to a masternode with a current mixing queue, it attempts to join the
   existing queue
 
-Dash Core starts a new queue ~33% of the time and attempts to join an existing
+Lifetioncoin Core starts a new queue ~33% of the time and attempts to join an existing
 queue the remainder of the time.
 
 | Bytes | Name | Data type | Required | Description |
@@ -2178,7 +2178,7 @@ been omitted.) Note that the 'Required inputs' bytes will only be preset if
 Spork 6 is active and protocol version => 70209.
 
 {% highlight text %}
-02000000 ................................... Denomination: 1 Dash (2)
+02000000 ................................... Denomination: 1 Lifetioncoin (2)
 
 Collateral Transaction
 | Previous Output
@@ -2297,7 +2297,7 @@ Transaction Message
 | 0f ......................................... Number of outputs: 15
 |
 | Transaction output #1
-| | e8e4f50500000000 ......................... Duffs (1.00001 Dash)
+| | e8e4f50500000000 ......................... Duffs (1.00001 Lifetioncoin)
 | |
 | | 19 ....................................... Bytes in pubkey script: 25
 | | | 76 ..................................... OP_DUP
@@ -2313,7 +2313,7 @@ Transaction Message
 |
 |
 | Transaction output #5
-| | e8e4f50500000000 ......................... 100,001,000 Duffs (1.0001 Dash)
+| | e8e4f50500000000 ......................... 100,001,000 Duffs (1.0001 Lifetioncoin)
 | |
 | | 19 ....................................... Bytes in pubkey script: 25
 | | | 76 ..................................... OP_DUP
@@ -2329,7 +2329,7 @@ Transaction Message
 |
 |
 | Transaction output #15
-| | e8e4f50500000000 ......................... 100,001,000 Duffs (1.0001 Dash)
+| | e8e4f50500000000 ......................... 100,001,000 Duffs (1.0001 Lifetioncoin)
 | |
 | | 19 ....................................... Bytes in pubkey script: 25
 | | | 76 ..................................... OP_DUP
@@ -2426,7 +2426,7 @@ Collateral Transaction
 |
 | 01 ......................................... Number of outputs: 1
 |
-| | e093040000000000 ......................... 300,000 Duffs (0.003 Dash)
+| | e093040000000000 ......................... 300,000 Duffs (0.003 Lifetioncoin)
 | |
 | | 19 ....................................... Bytes in pubkey script: 25
 | | | 76 ..................................... OP_DUP
@@ -2443,7 +2443,7 @@ User outputs
 | 03 ......................................... Number of outputs: 3
 |
 | Transaction output #1
-| | e8e4f50500000000 ......................... 100,001,000 Duffs (1.0001 Dash)
+| | e8e4f50500000000 ......................... 100,001,000 Duffs (1.0001 Lifetioncoin)
 | |
 | | 19 ....................................... Bytes in pubkey script: 25
 | | | 76 ..................................... OP_DUP
@@ -2455,7 +2455,7 @@ User outputs
 | | | ac ..................................... OP_CHECKSIG
 |
 | Transaction output #2
-| | e8e4f50500000000 ......................... 100,001,000 Duffs (1.0001 Dash)
+| | e8e4f50500000000 ......................... 100,001,000 Duffs (1.0001 Lifetioncoin)
 | |
 | | 19 ....................................... Bytes in pubkey script: 25
 | | | 76 ..................................... OP_DUP
@@ -2467,7 +2467,7 @@ User outputs
 | | | ac ..................................... OP_CHECKSIG
 |
 | Transaction output #3
-| | e8e4f50500000000 ......................... 100,001,000 Duffs (1.0001 Dash)
+| | e8e4f50500000000 ......................... 100,001,000 Duffs (1.0001 Lifetioncoin)
 | |
 | | 19 ....................................... Bytes in pubkey script: 25
 | | | 76 ..................................... OP_DUP
@@ -2510,18 +2510,18 @@ Denominations (per [`src/privatesend.cpp`][privatesend denominations])
 
 | Value | Denomination
 |------|--------------
-| 1 | 10 Dash
-| 2 | 1 Dash
-| 4 | 0.1 Dash
-| 8 | 0.01 Dash
-| 16 | 0.001 Dash
+| 1 | 10 Lifetioncoin
+| 2 | 1 Lifetioncoin
+| 4 | 0.1 Lifetioncoin
+| 8 | 0.01 Lifetioncoin
+| 16 | 0.001 Lifetioncoin
 
 The following annotated hexdump shows a `dsq` message. (The
 message header has been omitted.) Note that the 'Required inputs' bytes will only
 be preset if Spork 6 is active and protocol version => 70209.
 
 {% highlight text %}
-01000000 ............................. Denomination: 10 Dash (1)
+01000000 ............................. Denomination: 10 Lifetioncoin (1)
 
 Masternode Outpoint
 | a383a2489aedccfab4bb41368d1c8ee3
@@ -2749,7 +2749,7 @@ Transaction Message
 | 05 ......................................... Number of outputs: 5
 |
 | Transaction output #1
-| | 10f19a3b00000000 ......................... Duffs (10.0001000 Dash)
+| | 10f19a3b00000000 ......................... Duffs (10.0001000 Lifetioncoin)
 | |
 | | 19 ....................................... Bytes in pubkey script: 25
 | | | 76 ..................................... OP_DUP
@@ -2790,7 +2790,7 @@ a4e8e616b5011886b9cffcce29e17fc1
 
 {% autocrossref %}
 
-The following network messages enable the masternode features built in to Dash.
+The following network messages enable the masternode features built in to Lifetioncoin.
 
 ![Overview Of P2P Protocol Masternode Request And Reply Messages](/img/dev/en-p2p-masternode-messages.svg)
 
@@ -2818,8 +2818,8 @@ Sync Item IDs
 
 | ID | Description | Response To
 |------|--------------|---------------
-| 2 | MASTERNODE_SYNC_LIST | _Deprecated following activation of DIP3 in Dash Core 0.13.0_<br><br>`dseg` message
-| 3 | MASTERNODE_SYNC_MNW | _Deprecated following activation of DIP3 in Dash Core 0.13.0_<br><br>`mnget` message
+| 2 | MASTERNODE_SYNC_LIST | _Deprecated following activation of DIP3 in Lifetioncoin Core 0.13.0_<br><br>`dseg` message
+| 3 | MASTERNODE_SYNC_MNW | _Deprecated following activation of DIP3 in Lifetioncoin Core 0.13.0_<br><br>`mnget` message
 | 10 | MASTERNODE_SYNC_GOVOBJ | `govsync` message
 | 11 | MASTERNODE_SYNC_GOVOBJ_VOTE | `govsync` message with non-zero hash
 
@@ -2838,7 +2838,7 @@ bf110000 ................................... Count: 4543
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 The `mnauth` message is sent by a masternode immediately after sending a
 `verack` message to authenticate that the sender is a masternode. It is only
@@ -2881,7 +2881,7 @@ abffc96819c5030fd5a7601af9c8ee50
 {% autocrossref %}
 
 The following network messages enable the long-living masternode quorum (LLMQ)
-features built in to Dash.
+features built in to Lifetioncoin.
 
 {% endautocrossref %}
 
@@ -2893,14 +2893,14 @@ The following network messages enable the creation of long living masternode
 quorums (LLMQs) as described in [DIP6](https://github.com/dashpay/dips/blob/master/dip-0006.md).
 
 With the exception of the `qfcommit` message, these messages are for intra-quorum
-communication only and are not propagated on the Dash network.
+communication only and are not propagated on the Lifetioncoin network.
 
 ##### qcontrib
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 ![Warning icon](/img/icons/icon_warning.svg) Note: This message is used for
 intra-quorum communication and is only sent to the masternodes in the LLMQ and
@@ -2993,7 +2993,7 @@ e000da1aeda5f98ec9e64b801681bfc1 ........... BLS signature (Operator Key)
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 ![Warning icon](/img/icons/icon_warning.svg) Note: This message is used for
 intra-quorum communication and is only sent to the masternodes in the LLMQ and
@@ -3062,7 +3062,7 @@ bb632eeb60f29e351963032a673abd61
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 ![Warning icon](/img/icons/icon_warning.svg) Note: This message is used for
 intra-quorum communication and is only sent to the masternodes in the LLMQ and
@@ -3141,7 +3141,7 @@ Contribution #2
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 ![Warning icon](/img/icons/icon_warning.svg) Note: This message is used for
 intra-quorum communication and is only sent to the masternodes in the LLMQ and
@@ -3297,14 +3297,14 @@ message signing sessions described in [DIP7](https://github.com/dashpay/dips/blo
 
 With the exception of the `qsendrecsigs` message and the `qsigrec` message,
 these messages are for intra-quorum communication only and are not
-propagated on the Dash network.
+propagated on the Lifetioncoin network.
 
 ##### qbsigs
 {% include helpers/subhead-links.md %}
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 ![Warning icon](/img/icons/icon_warning.svg) Note: This message is used for
 intra-quorum communication and is only sent to the masternodes in the LLMQ and
@@ -3314,7 +3314,7 @@ The `qbsigs` message is used to send batched signature shares in response to a
 `qgetsigs` message.
 
 Note: The number of messages that can be sent in a batch is limited to 400
-(as defined by `MAX_MSGS_TOTAL_BATCHED_SIGS` in Dash Core).
+(as defined by `MAX_MSGS_TOTAL_BATCHED_SIGS` in Lifetioncoin Core).
 
 | Bytes | Name | Data type | Description |
 | --- | --- | --- | --- |
@@ -3379,7 +3379,7 @@ Signature Share Batch 2
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 ![Warning icon](/img/icons/icon_warning.svg) Note: This message is used for
 intra-quorum communication and is only sent to the masternodes in the LLMQ and
@@ -3389,7 +3389,7 @@ The `qgetsigs` message is used to request signature shares. The response to a
 `qgetsigs` message is a `qbsigs` message.
 
 Note: The number of inventories in a `qgetsigs` message is limited to 200
-(as defined by `MAX_MSGS_CNT_QGETSIGSHARES` in Dash Core).
+(as defined by `MAX_MSGS_CNT_QGETSIGSHARES` in Lifetioncoin Core).
 
 | Bytes | Name | Data type | Description |
 | --- | --- | --- | --- |
@@ -3427,7 +3427,7 @@ Signature share request 2
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 The `qsendrecsigs` message is used to notify a peer to send plain LLMQ recovered
 signatures (inventory type `MSG_QUORUM_RECOVERED_SIG`). Otherwise the peer would
@@ -3439,7 +3439,7 @@ in the higher level messages.
 
 | Bytes | Name | Data type | Description |
 | --- | --- | --- | --- |
-| 1 | fSendRecSigs | bool | 0 - Notify peer to not send plain LLMQ recovered signatures<br>1 - Notify peer to send plain LLMQ recovered signatures (default for Dash Core nodes)
+| 1 | fSendRecSigs | bool | 0 - Notify peer to not send plain LLMQ recovered signatures<br>1 - Notify peer to send plain LLMQ recovered signatures (default for Lifetioncoin Core nodes)
 
 The following annotated hexdump shows a `qsendrecsigs` message. (The
 message header has been omitted.)
@@ -3456,7 +3456,7 @@ message header has been omitted.)
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 The `qsigrec` message is used to provide recovered signatures and related quorum
 details to nodes that have requested this information via the `qsendrecsigs` message.
@@ -3506,7 +3506,7 @@ a11e5e7930deccc3e11a931fc9524f06 ........... LLMQ BLS Signature (96 bytes)
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 ![Warning icon](/img/icons/icon_warning.svg) Note: This message is used for
 intra-quorum communication and is only sent to the masternodes in the LLMQ and
@@ -3517,7 +3517,7 @@ session. The sessionId will be used for all P2P messages related to that
 session.
 
 Note: The maximum number of announcements in a `qsigsesann` message is limited to
-100 (as defined by `MAX_MSGS_CNT_QSIGSESANN` in Dash Core).
+100 (as defined by `MAX_MSGS_CNT_QSIGSESANN` in Lifetioncoin Core).
 
 | Bytes | Name | Data type | Description |
 | --- | --- | --- | --- |
@@ -3576,7 +3576,7 @@ Session Announcement 2
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 ![Warning icon](/img/icons/icon_warning.svg) Note: This message is used for
 intra-quorum communication and is only sent to the masternodes in the LLMQ and
@@ -3586,7 +3586,7 @@ The `qsigsinv` message (quorum signature inventory) announces one or more quorum
 signature share inventories known by the transmitting peer.
 
 Note: The maximum number of inventories in a `qsigsinv` message is limited to
-200 (as defined by `MAX_MSGS_CNT_QSIGSHARESINV` in Dash Core).
+200 (as defined by `MAX_MSGS_CNT_QSIGSHARESINV` in Lifetioncoin Core).
 
 <!-- See quorum_signing_shares.h (CSigSharesInv) -->
 
@@ -3628,7 +3628,7 @@ Match  qbsigs and qsigsesann
 
 {% autocrossref %}
 
-*Added in protocol version 70214 of Dash Core*
+*Added in protocol version 70214 of Lifetioncoin Core*
 
 The `qwatch` message tells the receiving peer to relay LLMQ messages
 (`qcontrib` messages, `qcomplaint` messages, `qjustify` messages, and
@@ -3645,7 +3645,7 @@ section][section message header] for an example of a message without a payload.
 
 {% autocrossref %}
 
-The following network messages enable the Governance features built in to Dash.
+The following network messages enable the Governance features built in to Lifetioncoin.
 For additional details on the governance system, see this [Budget System page](https://docs.dash.org/en/stable/governance/index.html).
 
 ![Overview Of P2P Protocol Governance Request And Reply Messages](/img/dev/en-p2p-governance-messages.svg)
@@ -3678,7 +3678,7 @@ Governance Object Types (defined by src/governance-object.h)
 | Type | Name                    | Description
 |------|-------------------------|------------
 | 0 | `GOVERNANCE_OBJECT_UNKNOWN`  |
-| 1 | `GOVERNANCE_OBJECT_PROPOSAL` | Submitted proposal (requires collateral transaction - currently 5 Dash)
+| 1 | `GOVERNANCE_OBJECT_PROPOSAL` | Submitted proposal (requires collateral transaction - currently 5 Lifetioncoin)
 | 2 | `GOVERNANCE_OBJECT_TRIGGER`  | Masternode generated. Removed after activation/execution. Used for superblocks.
 
 The following annotated hexdump shows a `govobj` message for a Proposal object.
@@ -3768,7 +3768,7 @@ objects via a `govsync` message. Masternodes ignore requests for votes if they
 are not fully synced.
 
 {% highlight text %}
-Dash Core limits how frequently a masternode can vote on a governance object.
+Lifetioncoin Core limits how frequently a masternode can vote on a governance object.
 A masternode's vote will not be processed if it has been less than 60 minutes
 since its last vote on that object. Additionally, invalid votes can result in
 the node being banned.
@@ -3845,7 +3845,7 @@ the object requested.
 | # | filter | CBloomFilter | Required | Can be set to all zeros.<br>Only supported since [protocol version 70206][section protocol versions]
 
 {% highlight text %}
-Dash Core limits how frequently the first type of sync (object sync) can be
+Lifetioncoin Core limits how frequently the first type of sync (object sync) can be
 requested. Frequent requests will result in the node being banned.
 {% endhighlight %}
 
@@ -3891,7 +3891,7 @@ request if they are not fully synced.
 
 
 {% highlight text %}
-Note: Dash Core only allows nodes to request the entire list every 3 hours.
+Note: Lifetioncoin Core only allows nodes to request the entire list every 3 hours.
 Additional requests sent prior to then may result in the node being banned.
 {% endhighlight %}
 
@@ -3938,7 +3938,7 @@ entry and how to validate messages from it.
 | 8 | sigTime | int64_t | Required | Time which the signature was created
 | 4 | nProtocolVersion | int | Required | The protocol version of the masternode
 | # | lastPing | `mnp` message | Required | The last known ping of the masternode
-| 8 | nLastDsq | int64_t | Deprecated | **Removed in Dash Core 0.12.3.0**<br><br>The last time the masternode sent a `dsq` message (for mixing) (DEPRECATED)
+| 8 | nLastDsq | int64_t | Deprecated | **Removed in Lifetioncoin Core 0.12.3.0**<br><br>The last time the masternode sent a `dsq` message (for mixing) (DEPRECATED)
 
 The following annotated hexdump shows a `mnb` message. (The
 message header has been omitted and the actual IP address has been replaced
@@ -4013,7 +4013,7 @@ The `mnget` message requests masternode payment sync. The response to an
 they are not fully synced.
 
 {% highlight text %}
-Note: Dash Core limits how frequently a masternode payment sync can be
+Note: Lifetioncoin Core limits how frequently a masternode payment sync can be
 requested. Frequent requests will result in the node being banned.
 {% endhighlight %}
 
@@ -4028,7 +4028,7 @@ integer value requesting a specific number of payment votes. In protocol version
 
 | Bytes | Name | Data type | Required | Description |
 | ---------- | ----------- | --------- | -------- | -------- |
-| 4 | nMnCount | int | Deprecated | _Deprecated in Dash Core 0.12.3_<br><br>Number of masternode payment votes to request
+| 4 | nMnCount | int | Deprecated | _Deprecated in Lifetioncoin Core 0.12.3_<br><br>Number of masternode payment votes to request
 
 The following annotated hexdump shows a pre-0.12.3 `mnget` message. (The
 message header has been omitted.)
@@ -4047,7 +4047,7 @@ a8170000 ................................... Count: 6056
 ![Warning icon](/img/icons/icon_warning.svg) Deprecated since 0.14.0
 
 The `mnp` message is sent by masternodes every few minutes to ping the network
-with a message that propagates across the whole network. Dash Core currently
+with a message that propagates across the whole network. Lifetioncoin Core currently
 uses a minimum masternode ping time of 10 minutes.
 
 | Bytes | Name | Data type | Required | Description |
@@ -4130,7 +4130,7 @@ receiving it will relay it on to their connected peers.
 
 {% highlight text %}
 Important Notes:
-* Dash Core limits how frequently a masternode verify request can be
+* Lifetioncoin Core limits how frequently a masternode verify request can be
   requested. Frequent requests will result in the node being banned.
 
 * Only masternodes in the top `MAX_POSE_RANK` (10) can send an `mnv` request

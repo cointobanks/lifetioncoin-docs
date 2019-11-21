@@ -28,12 +28,12 @@ __AUTHOR__="Jeroen de Bruijn"
 ################################################################################
 
 ################################################################################
-##### Setup this script and clone the Dash repository                      #####
+##### Setup this script and clone the Lifetioncoin repository                      #####
 echo 'Setting up the script...'
 # Exit with nonzero exit code if anything fails
 set -e
 
-# Clone Dash Core
+# Clone Lifetioncoin Core
 git clone https://github.com/dashpay/dash.git
 cd dash
 

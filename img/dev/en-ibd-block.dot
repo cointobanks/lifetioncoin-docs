@@ -38,7 +38,7 @@ block [ shape="plaintext", label=<
         <td colspan="4" border="0"><i>Payload</i></td>
       </tr>
 
-	  // Serialized block value not changed to Dash block
+	  // Serialized block value not changed to Lifetioncoin block
       <tr>
         <td colspan="4" border="1"><i>Serialized Block</i><br/><font face="courier">010000006fe2...58eeac00000000</font></td>
       </tr>

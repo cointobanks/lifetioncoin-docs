@@ -8,14 +8,14 @@ http://opensource.org/licenses/MIT.
 <!-- __ -->
 
 The following guide aims to provide examples to help you start
-building Dash-based applications. To make the best use of this document,
-you may want to install the current version of Dash Core, either from
+building Lifetioncoin-based applications. To make the best use of this document,
+you may want to install the current version of Lifetioncoin Core, either from
 [source][core git] or from a [pre-compiled executable][core executable].
 
 Once installed, you'll have access to three programs: `dashd`,
 `dash-qt`, and `dash-cli`.
 
-* `dash-qt` provides a combination full Dash peer and wallet
+* `dash-qt` provides a combination full Lifetioncoin peer and wallet
   frontend. From the Help menu, you can access a console where you can
   enter the RPC commands used throughout this document.
 
@@ -53,17 +53,17 @@ rpcpassword=change_this_to_a_long_random_password
 
 You should also make the `dash.conf` file only readable to its
 owner.  On Linux, Mac OSX, and other Unix-like systems, this can be
-accomplished by running the following command in the Dash Core application
+accomplished by running the following command in the Lifetioncoin Core application
 directory:
 
 ~~~
 chmod 0600 dash.conf
 ~~~
 
-For development, it's safer and cheaper to use Dash's test network (testnet),
+For development, it's safer and cheaper to use Lifetioncoin's test network (testnet),
 regression test mode (regtest), or a develper network (devnet) described below.
 
-Questions about Dash use are best sent to the [Dash forum][forum
+Questions about Lifetioncoin use are best sent to the [Lifetioncoin forum][forum
 tech support] and [Discord channels][Discord channels]. Errors or suggestions related to
 documentation on dash-docs.github.io can be [submitted as an issue][docs issue].
 

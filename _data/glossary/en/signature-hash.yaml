@@ -7,7 +7,7 @@ required:
     title_max_40_characters_no_formatting: Signature Hash
 
     summary_max_255_characters_no_formatting: >
-        A flag to Dash signatures that indicates what parts of the
+        A flag to Lifetioncoin signatures that indicates what parts of the
         transaction the signature signs.  (The default is SIGHASH_ALL.)
         The unsigned parts of the transaction may be modified.
 

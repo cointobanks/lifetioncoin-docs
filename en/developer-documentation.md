@@ -5,7 +5,7 @@
 layout: base
 lang: en
 id: developer-documentation
-title: "Developer Documentation - Dash"
+title: "Developer Documentation - Lifetioncoin"
 breadcrumbs:
   - Developer Documentation
 end_of_page: |
@@ -48,7 +48,7 @@ end_of_page: |
       <!-- <p><a href="/en/developer-examples#p2p-network">P2P Network Examples</a></p> -->
       <!--<p><a href="https://en.bitcoin.it/wiki/Protocol_specification"><span class="fa fa-external-link"></span> Full Protocol Specification</a> - Wiki</p>-->
     </div><div>
-      <h2 id="contracts"><span class="fa fa-sitemap fa-lg fa-rotate-270"></span> Dash Features</h2>
+      <h2 id="contracts"><span class="fa fa-sitemap fa-lg fa-rotate-270"></span> Lifetioncoin Features</h2>
       <!-- <p><a href="/en/developer-guide#contracts">Contracts Guide</a></p> -->
 
       <p><a href="/en/developer-guide#instantsend">InstantSend Guide</a></p>
@@ -81,7 +81,7 @@ end_of_page: |
       <p><a href="/en/developer-guide#payment-processing">Payment Processing Guide</a></p>
       <p><a href="/en/developer-examples#payment-processing">Payment Processing Examples</a></p>
       -->
-      <p><a href="https://dashpay.atlassian.net/wiki/spaces/DOC/pages/86278547/Dash+Payment+Processor"><span class="fa fa-external-link"></span> Dash Payment Processor</a></p>
+      <p><a href="https://dashpay.atlassian.net/wiki/spaces/DOC/pages/86278547/Lifetioncoin+Payment+Processor"><span class="fa fa-external-link"></span> Lifetioncoin Payment Processor</a></p>
       <p><a href="https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki"><span class="fa fa-external-link"></span> Payment Protocol</a> - BIP70</p>
     </div><div>
       <h2 id="mining"><span class="fa fa-puzzle-piece fa-lg"></span> Mining</h2>
@@ -94,9 +94,9 @@ end_of_page: |
 
 <div class="resourcesmore"><div>
   <h2 id="additional-resources"><span class="fa fa-link fa-lg"></span> Additional resources</h2>
-  <p><a href="https://dashpay.atlassian.net/wiki/spaces/DOC/pages/5472261/Whitepaper"><span class="fa fa-external-link"></span> Dash Whitepaper</a> - Official Wiki</p>
-  <p><a href="https://github.com/dashpay/dips#readme"><span class="fa fa-external-link"></span> Dash Improvement Proposals</a> - GitHub</p>
-  <p><a href="https://dashpay.atlassian.net/wiki/spaces/DOC/pages"><span class="fa fa-external-link"></span> Dash Official Documentation</a> - Wiki</p>
+  <p><a href="https://dashpay.atlassian.net/wiki/spaces/DOC/pages/5472261/Whitepaper"><span class="fa fa-external-link"></span> Lifetioncoin Whitepaper</a> - Official Wiki</p>
+  <p><a href="https://github.com/dashpay/dips#readme"><span class="fa fa-external-link"></span> Lifetioncoin Improvement Proposals</a> - GitHub</p>
+  <p><a href="https://dashpay.atlassian.net/wiki/spaces/DOC/pages"><span class="fa fa-external-link"></span> Lifetioncoin Official Documentation</a> - Wiki</p>
   <p><a href="/en/bitcoin-paper"><span class="fa fa-external-link"></span> Bitcoin: A Peer-to-Peer Electronic Cash System</a> - Satoshi Nakamoto</p>
   <p><a href="https://github.com/bitcoin/bips#readme"><span class="fa fa-external-link"></span> Bitcoin Improvement Proposals</a> - GitHub</p>
 

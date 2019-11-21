@@ -25,22 +25,22 @@ transactions. This section will describe each part and
 demonstrate how to use them together to build complete transactions.
 
 To keep things simple, this section pretends coinbase transactions do
-not exist. Coinbase transactions can only be created by Dash miners
+not exist. Coinbase transactions can only be created by Lifetioncoin miners
 and they're an exception to many of the rules listed below. Instead of
 pointing out the coinbase exception to each rule, we invite you to read
 about coinbase transactions in the block chain section of this guide.
 
 ![The Parts Of A Transaction](/img/dev/en-tx-overview.svg)
 
-The figure above shows the main parts of a Dash transaction. Each
+The figure above shows the main parts of a Lifetioncoin transaction. Each
 transaction has at least one input and one output. Each [input][/en/glossary/input]{:#term-input}{:.term} spends the
 duffs paid to a previous output. Each [output][/en/glossary/output]{:#term-output}{:.term} then waits as an Unspent
 Transaction Output (UTXO) until a later input spends it. When your
-Dash wallet tells you that you have a 10,000 duff balance, it really
+Lifetioncoin wallet tells you that you have a 10,000 duff balance, it really
 means that you have 10,000 duffs waiting in one or more UTXOs.
 
 Each transaction is prefixed by a four-byte [transaction version number][]{:#term-transaction-version-number}{:.term} which tells
-Dash peers and miners which set of rules to use to validate it.  This
+Lifetioncoin peers and miners which set of rules to use to validate it.  This
 lets developers create new rules for future transactions without
 invalidating previous transactions.
 
@@ -63,14 +63,14 @@ The figures below help illustrate how these features are used by
 showing the workflow Alice uses to send Bob a transaction and which Bob
 later uses to spend that transaction. Both Alice and Bob will use the
 most common form of the standard Pay-To-Public-Key-Hash (P2PKH) transaction
-type. [P2PKH][/en/glossary/p2pkh-address]{:#term-p2pkh}{:.term} lets Alice spend duffs to a typical Dash address,
+type. [P2PKH][/en/glossary/p2pkh-address]{:#term-p2pkh}{:.term} lets Alice spend duffs to a typical Lifetioncoin address,
 and then lets Bob further spend those duffs using a simple
 cryptographic key pair.
 
 ![Creating A P2PKH Public Key Hash To Receive Payment](/img/dev/en-creating-p2pkh-output.svg)
 
 Bob must first generate a private/public [key pair][]{:#term-key-pair}{:.term} before Alice can create the
-first transaction. Dash uses the Elliptic Curve Digital Signature Algorithm (ECDSA) with
+first transaction. Lifetioncoin uses the Elliptic Curve Digital Signature Algorithm (ECDSA) with
 the secp256k1 curve; secp256k1 [private keys][/en/glossary/private-key]{:#term-private-key}{:.term} are 256 bits of random
 data. A copy of that data is deterministically transformed into an secp256k1 [public
 key][/en/glossary/public-key]{:#term-public-key}{:.term}. Because the transformation can be reliably repeated later, the
@@ -89,7 +89,7 @@ different states of a public key and to help the text better match the
 space-constrained diagrams where "public-key hash" wouldn't fit. -harding -->
 
 Bob provides the pubkey hash to Alice. Pubkey hashes are almost always
-sent encoded as Dash [addresses][/en/glossary/address]{:#term-address}{:.term}, which are base58-encoded strings
+sent encoded as Lifetioncoin [addresses][/en/glossary/address]{:#term-address}{:.term}, which are base58-encoded strings
 containing an address version number, the hash, and an error-detection
 checksum to catch typos. The address can be transmitted
 through any medium, including one-way mediums which prevent the spender
@@ -149,7 +149,7 @@ signed except for any signature scripts, which hold the full public keys and
 secp256k1 signatures.
 
 After putting his signature and public key in the signature script, Bob
-broadcasts the transaction to Dash miners through the peer-to-peer
+broadcasts the transaction to Lifetioncoin miners through the peer-to-peer
 network. Each peer and miner independently validates the transaction
 before broadcasting it further or attempting to include it in a new block of
 transactions.
@@ -257,7 +257,7 @@ Pubkey scripts are created by spenders who have little interest what
 that script does. Receivers do care about the script conditions and, if
 they want, they can ask spenders to use a particular pubkey script.
 Unfortunately, custom pubkey scripts are less convenient than short
-Dash addresses and there was no standard way to communicate them
+Lifetioncoin addresses and there was no standard way to communicate them
 between programs prior to widespread implementation of the BIP70 Payment
 Protocol discussed later.
 
@@ -285,7 +285,7 @@ Bob spend the output if the redeem script does not return false.
 ![Unlocking A P2SH Output For Spending](/img/dev/en-unlocking-p2sh-output.svg)
 
 The hash of the redeem script has the same properties as a pubkey
-hash---so it can be transformed into the standard Dash address format
+hash---so it can be transformed into the standard Lifetioncoin address format
 with only one small change to differentiate it from a standard address.
 This makes collecting a P2SH-style address as simple as collecting a
 P2PKH-style address. The hash also obfuscates any public keys in the
@@ -307,11 +307,11 @@ is the `IsStandard()` test, and transactions which pass it are called
 standard transactions.
 
 Non-standard transactions---those that fail the test---may be accepted
-by nodes not using the default Dash Core settings. If they are
+by nodes not using the default Lifetioncoin Core settings. If they are
 included in blocks, they will also avoid the IsStandard test and be
 processed.
 
-Besides making it more difficult for someone to attack Dash for
+Besides making it more difficult for someone to attack Lifetioncoin for
 free by broadcasting harmful transactions, the standard transaction
 test also helps prevent users from creating transactions today that
 would make adding new transaction features in the future more
@@ -321,7 +321,7 @@ number, it would become useless as a tool for introducing
 backwards-incompatible features.
 
 
-As of Dash Core 0.12.2, the standard pubkey script types are:
+As of Lifetioncoin Core 0.12.2, the standard pubkey script types are:
 
 {% endautocrossref %}
 
@@ -332,7 +332,7 @@ As of Dash Core 0.12.2, the standard pubkey script types are:
 {% autocrossref %}
 
 P2PKH is the most common form of pubkey script used to send a transaction to one
-or multiple Dash addresses.
+or multiple Lifetioncoin addresses.
 
 {% endautocrossref %}
 
@@ -439,7 +439,7 @@ Consensus rules allow null data outputs up to the maximum allowed pubkey
 script size of 10,000 bytes provided they follow all other consensus
 rules, such as not having any data pushes larger than 520 bytes.
 
-Dash Core 0.11.x will, by default, relay and mine null data
+Lifetioncoin Core 0.11.x will, by default, relay and mine null data
 transactions with up to 40 bytes in a single data push and only one null
 data output that pays exactly 0 duffs:
 
@@ -450,7 +450,7 @@ Pubkey Script: OP_RETURN <0 to 40 bytes of data>
 (Null data scripts cannot be spent, so there's no signature script.)
 ~~~
 
-Dash Core 0.12.1 defaults
+Lifetioncoin Core 0.12.1 defaults
 to relaying and mining null data outputs with up to 83 bytes with any
 number of data pushes, provided the total byte limit is not exceeded.
 There must still only be a single null data output and it must still pay
@@ -479,7 +479,7 @@ f77656420666f7220616e204f505f5245545552
 4e2e ....................................... Data
 {% endhighlight %}
 
-The `-datacarriersize` Dash Core configuration option allows you to
+The `-datacarriersize` Lifetioncoin Core configuration option allows you to
 set the maximum number of bytes in null data outputs that you will relay
 or mine.
 
@@ -489,7 +489,7 @@ or mine.
 {% autocrossref %}
 
 If you use anything besides a standard pubkey script in an output, peers
-and miners using the default Dash Core settings will neither
+and miners using the default Lifetioncoin Core settings will neither
 accept, broadcast, nor mine your transaction. When you try to broadcast
 your transaction to a peer running the default settings, you will
 receive an error.
@@ -531,7 +531,7 @@ Standard transactions must also meet the following conditions:
 * The transaction must not include any outputs which receive fewer than
   1/3 as many duffs as it would take to spend it in a typical input.
   That's currently 5460 duffs for a
-  P2PKH or P2SH output on a Dash Core node with the default relay fee.
+  P2PKH or P2SH output on a Lifetioncoin Core node with the default relay fee.
   Exception: standard null data outputs must receive zero duffs.
 
 {% endautocrossref %}
@@ -606,7 +606,7 @@ hash types sign, including the procedure for inserting the subscript -->
 {% autocrossref %}
 
 One thing all signature hash types sign is the transaction's [locktime][/en/glossary/locktime]{:#term-locktime}{:.term}.
-(Called nLockTime in the Dash Core source code.)
+(Called nLockTime in the Lifetioncoin Core source code.)
 The locktime indicates the earliest time a transaction can be added to
 the block chain.
 
@@ -628,7 +628,7 @@ to two hours before its time lock officially expires. Also, blocks are
 not created at guaranteed intervals, so any attempt to cancel a valuable
 transaction should be made a few hours before the time lock expires.
 
-Previous versions of Dash Core provided a feature which prevented
+Previous versions of Lifetioncoin Core provided a feature which prevented
 transaction signers from using the method described above to cancel a
 time-locked transaction, but a necessary part of this feature was
 disabled to prevent denial of service attacks. A legacy of this system are four-byte
@@ -640,7 +640,7 @@ allowing the transaction to be added to a block even if its time lock
 had not expired.
 
 Even today, setting all sequence numbers to 0xffffffff (the default in
-Dash Core) can still disable the time lock, so if you want to use
+Lifetioncoin Core) can still disable the time lock, so if you want to use
 locktime, at least one input must have a sequence number below the
 maximum. Since sequence numbers are not used by the network for any
 other purpose, setting any sequence number to zero is sufficient to
@@ -667,7 +667,7 @@ enable locktime.
 Transactions pay fees based on the total byte size of the signed transaction.
 Fees per byte are calculated based on current demand for space in mined blocks
 with fees rising as demand increases.  The transaction fee is given to the
-Dash miner, as explained in the [block chain section][section block chain], and
+Lifetioncoin miner, as explained in the [block chain section][section block chain], and
 so it is ultimately up to each miner to choose the minimum transaction fee they
 will accept.
 
@@ -675,7 +675,7 @@ All transactions are prioritized based on their fee per byte, with higher-paying
 transactions being added in sequence until all of the available space is filled.
 <!-- Consider adding links to blockmaxsize and blockmaxweight options once available in the glossary. -->
 
-As of Dash Core 0.12.2.x, a [minimum fee][/en/glossary/minimum-relay-fee]{:#term-minimum-fee}{:.term} (1,000 duffs following [DIP1][] activation) is required to
+As of Lifetioncoin Core 0.12.2.x, a [minimum fee][/en/glossary/minimum-relay-fee]{:#term-minimum-fee}{:.term} (1,000 duffs following [DIP1][] activation) is required to
 broadcast a transaction across the network. Any transaction paying
 only the minimum fee should be prepared to wait a long time before there's
 enough spare space in a block to include it.
@@ -705,7 +705,7 @@ person to use the public block chain to track past and future
 transactions involving the other person's same public keys or addresses.
 
 If the same public key is reused often, as happens when people use
-Dash addresses (hashed public keys) as static payment addresses,
+Lifetioncoin addresses (hashed public keys) as static payment addresses,
 other people can easily track the receiving and spending habits of that
 person, including how many duffs they control in known addresses.
 
@@ -753,7 +753,7 @@ by [BIP21](https://github.com/dashevo/bips/blob/master/bip-0021.mediawiki#genera
 
 {% autocrossref %}
 
-None of Dash's signature hash types protect the signature script, leaving
+None of Lifetioncoin's signature hash types protect the signature script, leaving
 the door open for a limited denial of service attack called [transaction
 malleability][/en/glossary/malleability]{:.term}{:#term-transaction-malleability}. The signature script
 contains the secp256k1 signature, which can't sign itself, allowing attackers to
@@ -768,12 +768,12 @@ links to previous transactions using hashes as a transaction
 identifier (txid), a modified transaction will not have the txid its
 creator expected.
 
-This isn't a problem for most Dash transactions which are designed to
+This isn't a problem for most Lifetioncoin transactions which are designed to
 be added to the block chain immediately. But it does become a problem
 when the output from a transaction is spent before that transaction is
 added to the block chain.
 
-Dash Core 12.3 implemented [BIP-147: Dealing with dummy stack element malleability](https://github.com/bitcoin/bips/blob/master/bip-0147.mediawiki)
+Lifetioncoin Core 12.3 implemented [BIP-147: Dealing with dummy stack element malleability](https://github.com/bitcoin/bips/blob/master/bip-0147.mediawiki)
 which fixes a design flaw in OP_CHECKMULTISIG and OP_CHECKMULTISIGVERIFY that
 caused them to consume an extra stack element ("dummy element") after signature
 validation. Previously, the dummy element was not inspected in any manner, and could be
@@ -781,7 +781,7 @@ replaced by any value without invalidating the script. BIP147 removed this
 malleability vector by forcing the dummy element to be an empty byte array and
 rejecting anything else.
 
-<!-- Not applicable to Dash
+<!-- Not applicable to Lifetioncoin
 Bitcoin developers have been working to reduce transaction malleability
 among standard transaction types, one outcome of those efforts is
 [BIP 141: Segregated Witness](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki),
@@ -791,7 +791,7 @@ previous transactions which have not been added to the block chain yet,
 especially if large amounts of satoshis are at stake.
 -->
 
-Transaction malleability also affects payment tracking.  Dash Core's
+Transaction malleability also affects payment tracking.  Lifetioncoin Core's
 RPC interface lets you track transactions by their txid---but if that
 txid changes because the transaction was modified, it may appear that
 the transaction has disappeared from the network.
@@ -813,6 +813,6 @@ outputs that the lost transaction used as inputs.
 
 For additional information regarding the types transaction malleability,
 reference [this blog post](https://blog.dash.org/segwit-lighting-rbf<!--noref-->-in-dash-9536868ca861)
-by one of the Dash Core developers.
+by one of the Lifetioncoin Core developers.
 
 {% endautocrossref %}

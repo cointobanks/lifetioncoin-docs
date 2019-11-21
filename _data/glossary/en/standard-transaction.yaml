@@ -7,9 +7,9 @@ required:
     title_max_40_characters_no_formatting: Standard Transaction
 
     summary_max_255_characters_no_formatting: >
-        A transaction that passes Dash Core's IsStandard() and
+        A transaction that passes Lifetioncoin Core's IsStandard() and
         IsStandardTx() tests. Only standard transactions are mined or
-        broadcast by peers running the default Dash Core software.
+        broadcast by peers running the default Lifetioncoin Core software.
 
     synonyms_shown_in_glossary_capitalize_first_letter:
         - Standard Transaction

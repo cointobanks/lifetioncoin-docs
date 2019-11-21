@@ -34,7 +34,7 @@ if [ "$PARAMCOUNT" == 1 ]; then
 	echo "*Result---RESULT DESCRIPTION*" >> $FILENAME
 	echo "" >> $FILENAME
 
-	echo "*Example from Dash Core 0.14.0*" >> $FILENAME
+	echo "*Example from Lifetioncoin Core 0.14.0*" >> $FILENAME
 	echo "" >> $FILENAME
 
 	# Example

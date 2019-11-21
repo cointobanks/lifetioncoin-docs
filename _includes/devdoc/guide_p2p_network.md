@@ -9,23 +9,23 @@ http://opensource.org/licenses/MIT.
 
 {% autocrossref %}
 
-The Dash network protocol allows full nodes
+The Lifetioncoin network protocol allows full nodes
 (peers) to collaboratively maintain a
 [peer-to-peer network][network]{:#term-network}{:.term} for block and
 transaction exchange. Full nodes download and verify every block and transaction
 prior to relaying them to other nodes. Archival nodes are full nodes which
 store the entire blockchain and can serve historical blocks to other nodes.
 Pruned nodes are full nodes which do not store the entire blockchain. Many SPV
-clients also use the Dash network protocol to connect to full nodes.
+clients also use the Lifetioncoin network protocol to connect to full nodes.
 
-Consensus rules do _not_ cover networking, so Dash programs may use
+Consensus rules do _not_ cover networking, so Lifetioncoin programs may use
 alternative networks and protocols, such as the [high-speed block relay
 network][] used by some miners and the [dedicated transaction
 information servers][electrum server] used by some wallets that provide
 SPV-level security.
 
-To provide practical examples of the Dash peer-to-peer network, this
-section uses Dash Core as a representative full node and [DashJ][]
+To provide practical examples of the Lifetioncoin peer-to-peer network, this
+section uses Lifetioncoin Core as a representative full node and [DashJ][]
 as a representative SPV client. Both programs are flexible, so only
 default behavior is described. Also, for privacy, actual IP addresses
 in the example output below have been replaced with [RFC5737][] reserved
@@ -41,7 +41,7 @@ IP addresses.
 When started for the first time, programs don't know the IP
 addresses of any active full nodes. In order to discover some IP
 addresses, they query one or more DNS names (called [DNS seeds][/en/glossary/dns-seed]{:#term-dns-seed}{:.term})
-hardcoded into Dash Core. The response to the lookup should include one or more
+hardcoded into Lifetioncoin Core. The response to the lookup should include one or more
 [DNS A records][] with the IP addresses of full nodes that may accept new
 incoming connections. For example, using the [Unix `dig`command][dig command]:
 
@@ -55,12 +55,12 @@ incoming connections. For example, using the [Unix `dig`command][dig command]:
 
     [...]
 
-The DNS seeds are maintained by Dash community members: some of them
+The DNS seeds are maintained by Lifetioncoin community members: some of them
 provide dynamic DNS seed servers which automatically get IP addresses
 of active nodes by scanning the network; others provide static DNS
 seeds that are updated manually and are more likely to provide IP
 addresses for inactive nodes. In either case, nodes are added to the
-DNS seed if they run on the default Dash ports of 9999 for mainnet
+DNS seed if they run on the default Lifetioncoin ports of 9999 for mainnet
 or 19999 for testnet.
 
 <!-- paragraph below based on Greg Maxwell's email in
@@ -76,7 +76,7 @@ Once a program has connected to the network, its peers can begin to send
 it `addr`
 (address<!--noref-->) messages with the IP addresses and port numbers of
 other peers on the network, providing a fully decentralized method of
-peer discovery. Dash Core keeps a record of known peers in a
+peer discovery. Lifetioncoin Core keeps a record of known peers in a
 persistent on-disk database which usually allows it to connect directly
 to those peers on subsequent startups without having to use DNS seeds.
 
@@ -92,8 +92,8 @@ the status of payment.
      https://github.com/dashpay/dash/commit/2e7009d67b862cf822a1c70e181de6af659a3096
      -->
 
-Dash Core tries to strike a balance between minimizing delays
-and avoiding unnecessary DNS seed use: if Dash Core has entries in
+Lifetioncoin Core tries to strike a balance between minimizing delays
+and avoiding unnecessary DNS seed use: if Lifetioncoin Core has entries in
 its peer database, it spends up to 11 seconds attempting to connect to
 at least one of them before falling back to seeds; if a connection is
 made within that time, it does not query any seeds.
@@ -104,24 +104,24 @@ and a function to use them, but I don't see that function being used in
 any of the examples/wallet templates (but I'm not Java fluent, so
 maybe PEBKAC). -@harding -->
 
-Dash Core also includes a hardcoded list of IP addresses and port numbers to
+Lifetioncoin Core also includes a hardcoded list of IP addresses and port numbers to
 several dozen nodes which were active around the time that particular
-version of the software was first released. Starting with Dash Core 0.12.3,
+version of the software was first released. Starting with Lifetioncoin Core 0.12.3,
 masternodes are used for the seed list since they must remain online to receive
 their portion of the block reward (good availability) and must be compliant with
-consensus rules (reliable). Dash Core will start attempting to connect to these
+consensus rules (reliable). Lifetioncoin Core will start attempting to connect to these
 nodes if none of the DNS seed servers have responded to a query within 60
 seconds, providing an automatic fallback option.
 
-As a manual fallback option, Dash Core also provides several
+As a manual fallback option, Lifetioncoin Core also provides several
 command-line connection options, including the ability to get a list of
 peers from a specific node by IP address, or to make a persistent
 connection to a specific node by IP address.  See the `-help` text for
 details.
 
-**Resources:** [Dash Seeder][], the program run by several of the
-seeds used by Dash Core. The Dash Core [DNS Seed Policy][]. The hardcoded list
- of IP addresses used by Dash Core is generated using the [makeseeds script][].
+**Resources:** [Lifetioncoin Seeder][], the program run by several of the
+seeds used by Lifetioncoin Core. The Lifetioncoin Core [DNS Seed Policy][]. The hardcoded list
+ of IP addresses used by Lifetioncoin Core is generated using the [makeseeds script][].
 
 {% endautocrossref %}
 
@@ -161,9 +161,9 @@ all the blocks which were produced since the last time it was online.
 
 <!-- This needs to be reviewed for accuracy. @thephez -->
 
-Dash Core uses the IBD method any time the last block on its local
+Lifetioncoin Core uses the IBD method any time the last block on its local
 best block chain has a block header time more than 24 hours in the past.
-Dash Core will also perform IBD if its local best block chain is
+Lifetioncoin Core will also perform IBD if its local best block chain is
 more than 144 blocks lower than its local best header chain (that is,
 the local block chain is more than about 6 hours in the past).
 
@@ -174,7 +174,7 @@ the local block chain is more than about 6 hours in the past).
 
 {% autocrossref %}
 
-Dash Core (up until version 0.12.0.x) uses a simple initial block download (IBD)
+Lifetioncoin Core (up until version 0.12.0.x) uses a simple initial block download (IBD)
 method we'll call *blocks-first*. The goal is to download the blocks from the
 best block chain in sequence.
 
@@ -276,7 +276,7 @@ of its downloading. This has several implications:
 
 * **Speed Limits:** All requests are made to the sync node, so if the
   sync node has limited upload bandwidth, the IBD node will have slow
-  download speeds.  Note: if the sync node goes offline, Dash Core
+  download speeds.  Note: if the sync node goes offline, Lifetioncoin Core
   will continue downloading from another node---but it will still only
   download from a single sync node at a time.
 
@@ -284,7 +284,7 @@ of its downloading. This has several implications:
   otherwise valid) block chain to the IBD node. The IBD node won't be
   able to identify it as non-best until the initial block download nears
   completion, forcing the IBD node to restart its block chain download
-  over again from a different node. Dash Core ships with several
+  over again from a different node. Lifetioncoin Core ships with several
   block chain checkpoints at various block heights selected by
   developers to help an IBD node detect that it is being fed an
   alternative block chain history---allowing the IBD node to restart
@@ -302,7 +302,7 @@ of its downloading. This has several implications:
   which may lead to high memory use.
 
 All of these problems are addressed in part or in full by the
-headers-first IBD method used in Dash Core 0.12.0.x.
+headers-first IBD method used in Lifetioncoin Core 0.12.0.x.
 
 **Resources:** The table below summarizes the messages mentioned
 throughout this subsection. The links in the message field will take you
@@ -319,7 +319,7 @@ to the reference page for that message.
 
 {% autocrossref %}
 
-Dash Core 0.12.0 uses an initial block download (IBD) method called
+Lifetioncoin Core 0.12.0 uses an initial block download (IBD) method called
 *headers-first*. The goal is to download the headers for the best [header
 chain][/en/glossary/header-chain]{:#term-header-chain}{:.term}, partially validate them as best
 as possible, and then download the corresponding blocks in parallel.  This
@@ -378,7 +378,7 @@ two things in parallel:
     has downloaded belong to the best header chain reported by any of
     its outbound peers. This means a dishonest sync node will quickly be
     discovered even if checkpoints aren't used (as long as the IBD node
-    connects to at least one honest peer; Dash Core will continue to
+    connects to at least one honest peer; Lifetioncoin Core will continue to
     provide checkpoints in case honest peers can't be found).
 
 2. **Download Blocks:** While the IBD node continues downloading
@@ -392,21 +392,21 @@ two things in parallel:
    avoid having its download speed constrained to the upload speed of a
    single sync node.
 
-    To spread the load between multiple peers, Dash Core will only
+    To spread the load between multiple peers, Lifetioncoin Core will only
     request up to 16 blocks at a time from a single peer. Combined with
     its maximum of 8 outbound connections, this means headers-first
-    Dash Core will request a maximum of 128 blocks simultaneously
-    during IBD (the same maximum number that blocks-first Dash Core
+    Lifetioncoin Core will request a maximum of 128 blocks simultaneously
+    during IBD (the same maximum number that blocks-first Lifetioncoin Core
     requested from its sync node).
 
 ![Simulated Headers-First Download Window](/img/dev/en-headers-first-moving-window.svg)
 
-Dash Core's headers-first mode uses a 1,024-block moving download
+Lifetioncoin Core's headers-first mode uses a 1,024-block moving download
 window to maximize download speed. The lowest-height block in the window
 is the next block to be validated; if the block hasn't arrived by the
-time Dash Core is ready to validate it, Dash Core will wait a
+time Lifetioncoin Core is ready to validate it, Lifetioncoin Core will wait a
 minimum of two more seconds for the stalling node to send the block. If
-the block still hasn't arrived, Dash Core will disconnect from the
+the block still hasn't arrived, Lifetioncoin Core will disconnect from the
 stalling node and attempt to connect to another node. For example, in
 the illustration above, Node A will be disconnected if it doesn't send
 block 3 within at least two seconds.
@@ -466,7 +466,7 @@ peers using one of the following methods:
    bloom filter in a `merkleblock` message followed by zero or more
    `tx` messages.
 
-By default, Dash Core broadcasts blocks using standard block relay,
+By default, Lifetioncoin Core broadcasts blocks using standard block relay,
 but it will accept blocks sent using either of the methods described above.
 
 Full nodes validate the received block and then advertise it to their
@@ -547,8 +547,8 @@ actually mine some or all of those transactions, but it's also useful
 for any peer who wants to keep track of unconfirmed transactions, such
 as peers serving unconfirmed transaction information to SPV clients.
 
-Because unconfirmed transactions have no permanent status in Dash,
-Dash Core stores them in non-persistent memory, calling them a memory
+Because unconfirmed transactions have no permanent status in Lifetioncoin,
+Lifetioncoin Core stores them in non-persistent memory, calling them a memory
 pool or mempool. When a peer shuts down, its memory pool is lost except
 for any transactions stored by its wallet. This means that never-mined
 unconfirmed transactions tend to slowly disappear from the network as
@@ -558,7 +558,7 @@ for others.
 Transactions which are mined into blocks that later become stale blocks may be
 added back into the memory pool. These re-added transactions may be
 re-removed from the pool almost immediately if the replacement blocks
-include them. This is the case in Dash Core, which removes stale
+include them. This is the case in Lifetioncoin Core, which removes stale
 blocks from the chain one by one, starting with the tip (highest block).
 As each block is removed, its transactions are added back to the memory
 pool. After all of the stale blocks are removed, the replacement
@@ -643,12 +643,12 @@ information. If a peer gets a banscore above the `-banscore=<n>` threshold
 
 {% autocrossref %}
 
-*Removed in Bitcoin Core 0.13.0. Retained in Dash Core (see [PR1326](https://github.com/dashpay/dash/pull/1326)).*
+*Removed in Bitcoin Core 0.13.0. Retained in Lifetioncoin Core (see [PR1326](https://github.com/dashpay/dash/pull/1326)).*
 
-In case of a bug or attack, the Dash Core developers can issue an alert via the
-Dash network. Alerts will be displayed by the Dash Core UI. Users can also
+In case of a bug or attack, the Lifetioncoin Core developers can issue an alert via the
+Lifetioncoin network. Alerts will be displayed by the Lifetioncoin Core UI. Users can also
 check the error field of the `getinfo` RPC results to get currently active
-alerts for their specific version of Dash Core or use the `-alertnotify` command
+alerts for their specific version of Lifetioncoin Core or use the `-alertnotify` command
 line parameter to specify a custom command to execute when an alert is received.
 
 These messages are aggressively broadcast using the `alert` message, being sent

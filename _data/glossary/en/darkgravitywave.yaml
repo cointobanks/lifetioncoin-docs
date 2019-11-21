@@ -8,7 +8,7 @@ required:
 
     summary_max_255_characters_no_formatting: >
         An open source difficulty-adjusting algorithm for Bitcoin-based
-        cryptocurrencies that was first used in Dash. Difficulty adjusts
+        cryptocurrencies that was first used in Lifetioncoin. Difficulty adjusts
         every block based on historical statistical data to ensure
         consistent block issuance regardless of hash rate fluctuation.
 
@@ -22,7 +22,7 @@ optional:
     not_to_be_confused_with_capitalize_first_letter:
 
     links_html_or_markdown_style_capitalize_first_letter:
-        - "[Dark Gravity Wave](https://docs.dash.org/en/stable/introduction/features.html#dark-gravity-wave) --- Dash Documentation"
+        - "[Dark Gravity Wave](https://docs.dash.org/en/stable/introduction/features.html#dark-gravity-wave) --- Lifetioncoin Documentation"
 
 
 ---

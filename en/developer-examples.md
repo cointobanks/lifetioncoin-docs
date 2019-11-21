@@ -5,7 +5,7 @@
 layout: base
 lang: en
 id: developer-examples
-title: "Developer Examples - Dash"
+title: "Developer Examples - Lifetioncoin"
 breadcrumbs:
 #  - bitcoin
   - dev docs
@@ -18,9 +18,9 @@ end_of_page: |
 ---
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 
-# Dash Developer Examples
+# Lifetioncoin Developer Examples
 
-<p class="summary">Find examples of how to build programs using Dash.</p>
+<p class="summary">Find examples of how to build programs using Lifetioncoin.</p>
 
 <div markdown="1" id="toc" class="toc"><div markdown="1">
 

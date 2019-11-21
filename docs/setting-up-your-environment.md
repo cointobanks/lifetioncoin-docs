@@ -22,9 +22,9 @@ site an unlimited number of times with no extra work.
 #### Source Code Documentation
 
 The https://dash-docs.github.io site includes Doxygen generated documentation
-for the [Dash Core](https://github.com/dashpay/dash/) source code. To
-generate it, copy the files from `doxygen/` into the Dash Core `doc/` folder
-and run `doxygen doc/Doxyfile-dashdocs`. Then copy the output (Dash Core's
+for the [Lifetioncoin Core](https://github.com/dashpay/dash/) source code. To
+generate it, copy the files from `doxygen/` into the Lifetioncoin Core `doc/` folder
+and run `doxygen doc/Doxyfile-dashdocs`. Then copy the output (Lifetioncoin Core's
 `doc/doxygen/html/` folder) into the `en/doxygen/` folder of this project.
 
 ##### Install The Dependencies

@@ -7,9 +7,9 @@ required:
     title_max_40_characters_no_formatting: Masternode
 
     summary_max_255_characters_no_formatting: >
-        A computer that provides second-tier Dash functionality (InstantSend,
+        A computer that provides second-tier Lifetioncoin functionality (InstantSend,
         PrivateSend, decentralized governance). Masternodes are incentivized by
-        receiving part of the block reward, but must hold 1000 Dash as
+        receiving part of the block reward, but must hold 1000 Lifetioncoin as
         collateral to prevent sybil attacks.
 
     synonyms_shown_in_glossary_capitalize_first_letter:
@@ -27,6 +27,6 @@ optional:
         - "[Masternode Sync](/en/developer-guide#masternode-sync) --- Developer Guide"
         - "[Governance](/en/developer-guide#governance) --- Developer Guide"
         - "[Masternode messages](/en/developer-reference#masternode-messages) --- Developer Reference"
-        - "[Masternode](https://docs.dash.org/en/stable/introduction/features.html#masternodes) --- Dash Documentation"
+        - "[Masternode](https://docs.dash.org/en/stable/introduction/features.html#masternodes) --- Lifetioncoin Documentation"
 
 ---

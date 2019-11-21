@@ -7,8 +7,8 @@ required:
     title_max_40_characters_no_formatting: Sentinel
 
     summary_max_255_characters_no_formatting: >
-        An autonomous agent for persisting, processing and automating Dash
-        governance objects and tasks, and for expanded functions in Dash
+        An autonomous agent for persisting, processing and automating Lifetioncoin
+        governance objects and tasks, and for expanded functions in Lifetioncoin
         Evolution.
 
     synonyms_shown_in_glossary_capitalize_first_letter:
@@ -21,7 +21,7 @@ optional:
 
     links_html_or_markdown_style_capitalize_first_letter:
         - "[Sentinel](/en/developer-guide#sentinel) --- Developer Guide"
-        - "[Sentinel](https://docs.dash.org/en/stable/introduction/features.html#sentinel) --- Dash Documentation"
+        - "[Sentinel](https://docs.dash.org/en/stable/introduction/features.html#sentinel) --- Lifetioncoin Documentation"
 
 
 ---

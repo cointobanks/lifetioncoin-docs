@@ -24,6 +24,6 @@ optional:
     links_html_or_markdown_style_capitalize_first_letter:
         - "[ChainLocks](/en/developer-guide#chainlocks) --- Developer Guide"
         - "[ChainLock message](/en/developer-reference#clsig) --- Developer Reference"
-        - "[ChainLocks](https://docs.dash.org/en/stable/introduction/features.html#chainlocks) --- Dash Documentation"
+        - "[ChainLocks](https://docs.dash.org/en/stable/introduction/features.html#chainlocks) --- Lifetioncoin Documentation"
 
 ---

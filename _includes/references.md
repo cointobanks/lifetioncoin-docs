@@ -15,7 +15,7 @@ http://opensource.org/licenses/MIT.
 [msg_tx]: /en/developer-reference#term-msg_tx "The TXID data type identifier of an inventory on the P2P network"
 [msg_block]: /en/developer-reference#term-msg_block "The block header hash data type identifier of an inventory on the P2P network"
 [msg_filtered_block]: /en/developer-reference#term-msg_block "An alternative to the block header hash data type identifier of an inventory on the P2P network used to request a merkle block"
-<!-- Inventory Messages: Dash Specific -->
+<!-- Inventory Messages: Lifetioncoin Specific -->
 [msg_clsig]: /en/developer-reference#term-msg_clsig "The ChainLock Signature data type identifier of an inventory on the P2P network"
 [msg_islock]: /en/developer-reference#term-msg_islock "The LLMQ-based InstantSend Lock data type identifier of an inventory on the P2P network"
 [msg_txlock_request]: /en/developer-reference#term-msg_txlock_request "The InstantSend TX Lock request data type identifier of an inventory on the P2P network"
@@ -42,7 +42,7 @@ http://opensource.org/licenses/MIT.
 [msg_quorum_final_commitment]: /en/developer-reference#term-msg_quorum_final_commitment "The Long-Living Masternode Quorum Final Commitment data type identifier of an inventory on the P2P network"
 [msg_quorum_premature_commitment]: /en/developer-reference#term-msg_quorum_premature_commitment "The Long-Living Masternode Quorum Premature Commitment data type identifier of an inventory on the P2P network"
 [msg_quorum_recovered_sig]: /en/developer-reference#term-msg_quorum_recovered_sig "The Long-Living Masternode Quorum Recovered Signature data type identifier of an inventory on the P2P network"
-[network]: /en/developer-guide#term-network "The Dash P2P network which broadcasts transactions and blocks"
+[network]: /en/developer-guide#term-network "The Lifetioncoin P2P network which broadcasts transactions and blocks"
 [op_checkmultisig]: /en/developer-reference#term-op-checkmultisig "Opcode which returns true if one or more provided signatures (m) sign the correct parts of a transaction and match one or more provided public keys (n)"
 [op_checksig]: /en/developer-reference#term-op-checksig "Opcode which returns true if a signature signs the correct parts of a transaction and matches a provided public key"
 [op_dup]: /en/developer-reference#term-op-dup "Operation which duplicates the entry below it on the stack"
@@ -65,7 +65,7 @@ http://opensource.org/licenses/MIT.
 [unlocked wallet]: /en/developer-reference#walletpassphrase "An encrypted wallet that has been unlocked with the walletpassphrase RPC"
 [unsolicited block push]: /en/developer-guide#term-unsolicited-block-push "When a miner sends a block message without sending an inv message first"
 [v2 block]: /en/developer-reference#term-v2-block "The current version of Bitcoin blocks"
-[wallet support]: /en/developer-reference#term-wallet-support "A Dash Core ./configure option that enables (default) or disables the wallet"
+[wallet support]: /en/developer-reference#term-wallet-support "A Lifetioncoin Core ./configure option that enables (default) or disables the wallet"
 
 {% comment %}<!-- RPCs; alphabetical order -->{% endcomment %}
 [rpc abandontransaction]: /en/developer-reference#abandontransaction
@@ -236,7 +236,7 @@ http://opensource.org/licenses/MIT.
 [dssu message]: /en/developer-reference#dssu "A P2P network message providing a mixing pool status update"
 [dsq message]: /en/developer-reference#dsq "A P2P network message sent to indicate the queue is ready and the user is expected to send the entry inputs to start mixing"
 [dstx message]: /en/developer-reference#dstx "A P2P network message sent by masternodes to broadcast subsidized transactions without fees (provides security in mixing)"
-{% comment %}<!-- Fee Filter not currently implemented in Dash Core. [feefilter message]: /en/developer-reference#feefilter "The P2P network message which requests the receiving peer not relay any transactions below the specified fee rate" -->{% endcomment %}
+{% comment %}<!-- Fee Filter not currently implemented in Lifetioncoin Core. [feefilter message]: /en/developer-reference#feefilter "The P2P network message which requests the receiving peer not relay any transactions below the specified fee rate" -->{% endcomment %}
 [filteradd message]: /en/developer-reference#filteradd "A P2P protocol message used to add a data element to an existing bloom filter."
 [filterclear message]: /en/developer-reference#filterclear "A P2P protocol message used to remove an existing bloom filter."
 [filterload message]: /en/developer-reference#filterload "A P2P protocol message used to send a filter to a remote peer, requesting that they only send transactions which match the filter."
@@ -431,8 +431,8 @@ http://opensource.org/licenses/MIT.
 [core paymentrequest.proto]: https://github.com/dashpay/dash/blob/master/src/qt/paymentrequest.proto
 [core script.h]: https://github.com/dashpay/dash/blob/master/src/script/script.h
 [creative commons attribution 3.0 license]: https://creativecommons.org/licenses/by/3.0/
-[Dash Masternode Tool]: https://github.com/Bertrand256/dash-masternode-tool
-[Dash Seeder]: https://github.com/nightlydash/dash-seeder/tree/master
+[Lifetioncoin Masternode Tool]: https://github.com/Bertrand256/dash-masternode-tool
+[Lifetioncoin Seeder]: https://github.com/nightlydash/dash-seeder/tree/master
 [DashJ]: https://github.com/HashEngineering/dashj
 [dashmnb]: https://github.com/chaeplin/dashmnb
 [DER]: https://en.wikipedia.org/wiki/X.690#DER_encoding
@@ -495,7 +495,7 @@ http://opensource.org/licenses/MIT.
 [Stratum mining protocol]: http://mining.bitcoin.cz/stratum-mining
 [study of SPV privacy over tor]: http://arxiv.org/abs/1410.6079
 [superblock example]: https://chainz.cryptoid.info/dash/block.dws?731104.htm
-[Testnet Faucet - Dash.org]: https://test.faucet.dash.org/
+[Testnet Faucet - Lifetioncoin.org]: https://test.faucet.dash.org/
 [Testnet Faucet - Masternode.io]: http://test.faucet.masternode.io/
 [Testnet Faucet - Dashninja.pl]: https://test.faucet.dashninja.pl/
 [Testnet Faucet - Crowdnode.io]: http://faucet.test.dash.crowdnode.io/

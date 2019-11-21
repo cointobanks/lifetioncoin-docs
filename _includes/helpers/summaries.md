@@ -19,15 +19,15 @@ This file is licensed under the terms of its source texts{%endcomment%}
 {% assign summary_dumpWallet="creates or overwrites a file with all wallet keys in a human-readable format." %}
 {% assign summary_encryptWallet="encrypts the wallet with a passphrase.  This is only to enable encryption for the first time. After encryption is enabled, you will need to enter the passphrase to use private keys." %}
 {% assign summary_estimateFee="estimates the transaction fee per kilobyte that needs to be paid for a transaction to begin confirmation within a certain number of blocks." %}
-{% assign summary_estimatePriority="was removed in Dash Core 0.14.0." %}
+{% assign summary_estimatePriority="was removed in Lifetioncoin Core 0.14.0." %}
 {% assign summary_estimateSmartFee="estimates the transaction fee per kilobyte that needs to be paid for a transaction to begin confirmation within a certain number of blocks and returns the number of blocks for which the estimate is valid." %}
-{% assign summary_estimateSmartPriority="was removed in Dash Core 0.14.0." %}
+{% assign summary_estimateSmartPriority="was removed in Lifetioncoin Core 0.14.0." %}
 {% assign summary_fundRawTransaction="adds inputs to a transaction until it has enough in value to meet its out value." %}
 {% assign summary_gObject="provides a set of commands for managing governance objects and displaying information about them." %}
 {% assign summary_generate="mines blocks immediately (before the RPC call returns)." %}
 {% assign summary_generateToAddress="mines blocks immediately to a specified address." %}
 {% assign summary_getAccount="returns the name of the account associated with the given address." %}
-{% assign summary_getAccountAddress="returns the current Dash address for receiving payments to this account. If the account doesn't exist, it creates both the account and a new address for receiving payment.  Once a payment has been received to an address, future calls to this RPC for the same account will return a different address." %}
+{% assign summary_getAccountAddress="returns the current Lifetioncoin address for receiving payments to this account. If the account doesn't exist, it creates both the account and a new address for receiving payment.  Once a payment has been received to an address, future calls to this RPC for the same account will return a different address." %}
 {% assign summary_getAddedNodeInfo="returns information about the given added node, or all added nodes (except onetry nodes). Only nodes which have been manually added using the `addnode` RPC will have their information displayed." %}
 {% assign summary_getAddressBalance="returns the balance for address(es)." %}
 {% assign summary_getAddressDeltas="returns all changes for an address." %}
@@ -48,9 +48,9 @@ This file is licensed under the terms of its source texts{%endcomment%}
 {% assign summary_getChainTips="returns information about the highest-height block (tip) of each local block chain." %}
 {% assign summary_getConnectionCount="returns the number of connections to other nodes." %}
 {% assign summary_getDifficulty="returns the proof-of-work difficulty as a multiple of the minimum difficulty." %}
-{% assign summary_getGenerate="was removed in Dash Core 0.12.3." %}
+{% assign summary_getGenerate="was removed in Lifetioncoin Core 0.12.3." %}
 {% assign summary_getGovernanceInfo="returns an object containing governance parameters." %}
-{% assign summary_getHashesPerSec="was removed in Bitcoin Core 0.11.0 and is not part of Dash." %}
+{% assign summary_getHashesPerSec="was removed in Bitcoin Core 0.11.0 and is not part of Lifetioncoin." %}
 {% assign summary_getInfo="prints various information about the node and the network." %}
 {% assign summary_getMemPoolAncestors="returns all in-mempool ancestors for a transaction in the mempool." %}
 {% assign summary_getMemPoolDescendants="returns all in-mempool descendants for a transaction in the mempool." %}
@@ -61,12 +61,12 @@ This file is licensed under the terms of its source texts{%endcomment%}
 {% assign summary_getNetTotals="returns information about network traffic, including bytes in, bytes out, and the current time." %}
 {% assign summary_getNetworkHashPS="returns the estimated network hashes per second based on the last n blocks." %}
 {% assign summary_getNetworkInfo="returns information about the node's connection to the network." %}
-{% assign summary_getNewAddress="returns a new Dash address for receiving payments. If an account is specified, payments received with the address will be credited to that account." %}
+{% assign summary_getNewAddress="returns a new Lifetioncoin address for receiving payments. If an account is specified, payments received with the address will be credited to that account." %}
 {% assign summary_getPeerInfo="returns data about each connected network node." %}
 {% assign summary_getPoolInfo="returns an object containing mixing pool related information." %}
-{% assign summary_getRawChangeAddress="returns a new Dash address for receiving change. This is for use with raw transactions, not normal use." %}
+{% assign summary_getRawChangeAddress="returns a new Lifetioncoin address for receiving change. This is for use with raw transactions, not normal use." %}
 {% assign summary_getRawMemPool="returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object." %}
-{% assign summary_getRawTransaction="gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Dash Core only stores complete transaction data for UTXOs and your own transactions, so the RPC may fail on historic transactions unless you use the non-default `txindex=1` in your Dash Core startup settings." %}
+{% assign summary_getRawTransaction="gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Lifetioncoin Core only stores complete transaction data for UTXOs and your own transactions, so the RPC may fail on historic transactions unless you use the non-default `txindex=1` in your Lifetioncoin Core startup settings." %}
 {% assign summary_getReceivedByAccount="returns the total amount received by addresses in a particular account from transactions with the specified number of confirmations.  It does not count coinbase transactions." %}
 {% assign summary_getReceivedByAddress="returns the total amount received by the specified address in transactions with the specified number of confirmations. It does not count coinbase transactions." %}
 {% assign summary_getSpecialTxes="returns an array of special transactions found in the specified block" %}
@@ -78,7 +78,7 @@ This file is licensed under the terms of its source texts{%endcomment%}
 {% assign summary_getTxOutSetInfo="returns statistics about the confirmed unspent transaction output (UTXO) set. Note that this call may take some time and that it only counts outputs from confirmed transactions---it does not count outputs from the memory pool." %}
 {% assign summary_getUnconfirmedBalance="returns the wallet's total unconfirmed balance." %}
 {% assign summary_getWalletInfo="provides information about the wallet." %}
-{% assign summary_getWork="was removed in Bitcoin Core 0.10.0. and is not part of Dash" %}
+{% assign summary_getWork="was removed in Bitcoin Core 0.10.0. and is not part of Lifetioncoin" %}
 {% assign summary_help="lists all available public RPC commands, or gets help for the specified RPC.  Commands which are unavailable will not be listed, such as wallet RPCs if wallet support is disabled." %}
 {% assign summary_importAddress="adds an address or pubkey script to the wallet without the associated private key, allowing you to watch for transactions affecting that address or pubkey script without being able to spend any of its outputs." %}
 {% assign summary_importElectrumWallet="imports keys from an Electrum wallet export file (.csv or .json)" %}
@@ -102,7 +102,7 @@ This file is licensed under the terms of its source texts{%endcomment%}
 {% assign summary_listUnspent="returns an array of unspent transaction outputs belonging to this wallet." %}
 {% assign summary_lockUnspent="temporarily locks or unlocks specified transaction outputs. A locked transaction output will not be chosen by automatic coin selection when spending dash. Locks are stored in memory only, so nodes start with zero locked outputs and the locked output list is always cleared when a node stops or fails." %}
 {% assign summary_masternode="provides a set of commands for managing masternodes and displaying information about them." %}
-{% assign summary_masternodeBroadcast="was removed in Dash Core 0.14.0." %}
+{% assign summary_masternodeBroadcast="was removed in Lifetioncoin Core 0.14.0." %}
 {% assign summary_masternodeList="returns a list of masternodes in different modes." %}
 {% assign summary_mnSync="returns the sync status, updates to the next step or resets it entirely." %}
 {% assign summary_move="moves a specified amount from one account in your wallet to another using an off-block-chain transaction." %}
@@ -121,16 +121,16 @@ This file is licensed under the terms of its source texts{%endcomment%}
 {% assign summary_restGetHeaders="returns a specified amount of block headers in upward direction." %}
 {% assign summary_restGetMemPool-contents="returns all transaction in the memory pool with detailed information." %}
 {% assign summary_restGetMemPool-info="returns information about the node's current transaction memory pool." %}
-{% assign summary_restGetTx="gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Dash Core only stores complete transaction data for UTXOs and your own transactions, so this method may fail on historic transactions unless you use the non-default `txindex=1` in your Dash Core startup settings." %}
+{% assign summary_restGetTx="gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Lifetioncoin Core only stores complete transaction data for UTXOs and your own transactions, so this method may fail on historic transactions unless you use the non-default `txindex=1` in your Lifetioncoin Core startup settings." %}
 {% assign summary_sendFrom="spends an amount from a local account to a dash address." %}
 {% assign summary_sendMany="creates and broadcasts a transaction which sends outputs to multiple addresses." %}
 {% assign summary_sendRawTransaction="validates a transaction and broadcasts it to the peer-to-peer network." %}
 {% assign summary_sendToAddress="spends an amount to a given address." %}
-{% assign summary_sentinelPing="was removed in Dash Core 0.14.0." %}
+{% assign summary_sentinelPing="was removed in Lifetioncoin Core 0.14.0." %}
 {% assign summary_setAccount="puts the specified address in the given account." %}
 {% assign summary_setBIP69Enabled="enables or disables BIP69 input/output sorting (regtest network only)" %}
 {% assign summary_setBan="attempts add or remove a IP/Subnet from the banned list." %}
-{% assign summary_setGenerate="was removed in Dash Core 0.12.3." %}
+{% assign summary_setGenerate="was removed in Lifetioncoin Core 0.12.3." %}
 {% assign summary_setNetworkActive="disables/enables all P2P network activity." %}
 {% assign summary_setPrivateSendAmount="sets the amount of DASH to be mixed with PrivateSend" %}
 {% assign summary_setPrivateSendRounds="sets the number of PrivateSend mixing rounds to use" %}
@@ -139,9 +139,9 @@ This file is licensed under the terms of its source texts{%endcomment%}
 {% assign summary_signMessageWithPrivKey="signs a message with a given private key." %}
 {% assign summary_signRawTransaction="signs a transaction in the serialized transaction format using private keys stored in the wallet or provided in the call." %}
 {% assign summary_spork-rpc="reads or updates spork settings on the network." %}
-{% assign summary_stop="safely shuts down the Dash Core server." %}
-{% assign summary_submitBlock="accepts a block, verifies it is a valid addition to the block chain, and broadcasts it to the network. Extra parameters are ignored by Dash Core but may be used by mining pools or other programs." %}
-{% assign summary_validateAddress="returns information about the given Dash address." %}
+{% assign summary_stop="safely shuts down the Lifetioncoin Core server." %}
+{% assign summary_submitBlock="accepts a block, verifies it is a valid addition to the block chain, and broadcasts it to the network. Extra parameters are ignored by Lifetioncoin Core but may be used by mining pools or other programs." %}
+{% assign summary_validateAddress="returns information about the given Lifetioncoin address." %}
 {% assign summary_verifyChain="verifies each entry in the local block chain database." %}
 {% assign summary_verifyMessage="verifies a signed message." %}
 {% assign summary_verifyTxOutProof="verifies that a proof points to one or more transactions in a block, returning the transactions the proof commits to and throwing an RPC error if the block is not in our best block chain." %}

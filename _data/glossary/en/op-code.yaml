@@ -7,7 +7,7 @@ required:
     title_max_40_characters_no_formatting: Opcode
 
     summary_max_255_characters_no_formatting: >
-        Operation codes from the Dash Script language which push data
+        Operation codes from the Lifetioncoin Script language which push data
         or perform functions within a pubkey script or signature script.
 
     synonyms_shown_in_glossary_capitalize_first_letter:

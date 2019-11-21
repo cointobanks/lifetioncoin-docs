@@ -16,7 +16,7 @@ _cache
 _ignore/*
 
 # To prevent adding doxygen files since they can 
-# be easily generated from Dash Core source
+# be easily generated from Lifetioncoin Core source
 en/doxygen/
 
 # To prevent accidental push of translations from

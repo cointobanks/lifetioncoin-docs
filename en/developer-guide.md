@@ -5,7 +5,7 @@
 layout: base
 lang: en
 id: developer-guide
-title: "Developer Guide - Dash"
+title: "Developer Guide - Lifetioncoin"
 breadcrumbs:
 #  - bitcoin
   - dev docs
@@ -18,9 +18,9 @@ end_of_page: |
 ---
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 
-# Dash Developer Guide
+# Lifetioncoin Developer Guide
 
-<p class="summary">Find detailed information about the Dash protocol and related specifications.</p>
+<p class="summary">Find detailed information about the Lifetioncoin protocol and related specifications.</p>
 
 <div markdown="1" id="toc" class="toc"><div markdown="1">
 

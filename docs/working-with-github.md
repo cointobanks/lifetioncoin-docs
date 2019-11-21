@@ -79,6 +79,6 @@ need to re-create the branch and the pull request.
 
 **Advanced GitHub Workflow**
 
-If you continue to contribute to Dash.org beyond a single pull
+If you continue to contribute to Lifetioncoin.org beyond a single pull
 request, you may want to use a more [advanced GitHub
 workflow](https://gist.github.com/harding/1a99b0bad37f9498709f).

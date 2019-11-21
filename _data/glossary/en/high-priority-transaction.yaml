@@ -10,9 +10,9 @@ required:
         Transactions that don't have to pay a transaction fee because
         their inputs have been idle long enough to accumulated large
         amounts of priority.
-        Note: As of Dash Core 0.12.3, all
+        Note: As of Lifetioncoin Core 0.12.3, all
         transactions require a fee. Also, coin age priority logic was
-        removed in Dash Core 0.14.0.
+        removed in Lifetioncoin Core 0.14.0.
 
     synonyms_shown_in_glossary_capitalize_first_letter:
         - High-priority transaction

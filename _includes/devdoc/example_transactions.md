@@ -13,16 +13,16 @@ http://opensource.org/licenses/MIT.
 
 {% autocrossref %}
 
-Creating transactions is something most Dash applications do.
-This section describes how to use Dash Core's RPC interface to
+Creating transactions is something most Lifetioncoin applications do.
+This section describes how to use Lifetioncoin Core's RPC interface to
 create transactions with various attributes.
 
-Your applications may use something besides Dash Core to create
+Your applications may use something besides Lifetioncoin Core to create
 transactions, but in any system, you will need to provide the same kinds
 of data to create transactions with the same attributes as those
 described below.
 
-In order to use this tutorial, you will need to setup [Dash Core][core executable]
+In order to use this tutorial, you will need to setup [Lifetioncoin Core][core executable]
 and create a regression test mode environment with 500 DASH in your test
 wallet.
 
@@ -38,7 +38,7 @@ wallet.
 
 {% autocrossref %}
 
-Dash Core provides several RPCs which handle all the details of
+Lifetioncoin Core provides several RPCs which handle all the details of
 spending, including creating change outputs and paying appropriate fees.
 Even advanced users should use these RPCs whenever possible to decrease
 the chance that duffs will be lost by mistake.
@@ -50,7 +50,7 @@ yLp6ZJueuigiF4s9E1Pv8tEunDPEsjyQfd
 > NEW_ADDRESS=yLp6ZJueuigiF4s9E1Pv8tEunDPEsjyQfd
 {% endhighlight %}
 
-Get a new Dash address and save it in the shell variable `$NEW_ADDRESS`.
+Get a new Lifetioncoin address and save it in the shell variable `$NEW_ADDRESS`.
 
 {% highlight bash %}
 > dash-cli -regtest sendtoaddress $NEW_ADDRESS 10.00
@@ -147,7 +147,7 @@ Shell script to run the previous example:
 
 The raw transaction RPCs allow users to create custom transactions and
 delay broadcasting those transactions. However, mistakes made in raw
-transactions may not be detected by Dash Core, and a number of raw
+transactions may not be detected by Lifetioncoin Core, and a number of raw
 transaction users have permanently lost large numbers of duffs, so
 please be careful using raw transactions on mainnet.
 
@@ -328,7 +328,7 @@ Use the `signrawtransaction` RPC to sign the transaction created by
 `createrawtransaction` and save the returned "hex" raw format signed
 transaction to a shell variable.
 
-Even though the transaction is now complete, the Dash Core node we're
+Even though the transaction is now complete, the Lifetioncoin Core node we're
 connected to doesn't know anything about the transaction, nor does any
 other part of the network. We've created a spend, but we haven't
 actually spent anything because we could simply unset the
@@ -938,7 +938,7 @@ called m-of-n, and in this case we'll be using 2-of-3.
 Generate three new P2PKH addresses. P2PKH addresses cannot be used with
 the multisig redeem script created below. (Hashing each public key is
 unnecessary anyway---all the public keys are protected by a hash when
-the redeem script is hashed.) However, Dash Core uses addresses as a
+the redeem script is hashed.) However, Lifetioncoin Core uses addresses as a
 way to reference the underlying full (unhashed) public keys it knows
 about, so we get the three new addresses above in order to use their
 public keys.
@@ -1039,7 +1039,7 @@ ddb2a2eb2402a9ae61d7db93a9a48c0747859d899e704b10f5b72145779f9c52
 > UTXO_TXID=ddb2a2eb2402a9ae61d7db93a9a48c0747859d899e704b10f5b7[...]
 {% endhighlight %}
 
-Paying the P2SH multisig address with Dash Core is as simple as
+Paying the P2SH multisig address with Lifetioncoin Core is as simple as
 paying a more common P2PKH address. Here we use the same command (but
 different variable) we used in the Simple Spending subsection. As
 before, this command automatically selects an UTXO, creates a change

@@ -9,7 +9,7 @@
 <g id="graph0" class="graph" transform="scale(0.769848 0.769848) rotate(0) translate(4 277)">
 <title>blockchain</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-277 619.5,-277 619.5,4 -4,4"/>
-<text text-anchor="middle" x="307.75" y="-7.8" font-family="Times,serif" font-size="14.00">Simplified Dash Block Chain</text>
+<text text-anchor="middle" x="307.75" y="-7.8" font-family="Times,serif" font-size="14.00">Simplified Lifetioncoin Block Chain</text>
 <g id="clust1" class="cluster"><title>cluster_block0header</title>
 <polygon fill="none" stroke="black" stroke-width="1.75" points="44.5,-91 44.5,-265 173.5,-265 173.5,-91 44.5,-91"/>
 <text text-anchor="middle" x="109" y="-249.8" font-family="Times,serif" font-size="14.00">Block 1</text>

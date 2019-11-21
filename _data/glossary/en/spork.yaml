@@ -7,7 +7,7 @@ required:
     title_max_40_characters_no_formatting: Spork, Multi-Phased Fork
 
     summary_max_255_characters_no_formatting: >
-        A spork is a mechanism unique to Dash used to safely deploy
+        A spork is a mechanism unique to Lifetioncoin used to safely deploy
         new features to the network through network-level variables
         to avoid the risk of unintended network forking during upgrades.
 
@@ -28,7 +28,7 @@ optional:
 
     links_html_or_markdown_style_capitalize_first_letter:
         - "[Spork message](/en/developer-reference#spork) --- Developer Reference"
-        - "[Multi-Phased Fork (Spork)](https://docs.dash.org/en/stable/introduction/features.html#sporks) --- Dash Documentation"
-        - "[Understanding Sporks](https://docs.dash.org/en/stable/developers/index.html#sporks) --- Dash Documentation"
+        - "[Multi-Phased Fork (Spork)](https://docs.dash.org/en/stable/introduction/features.html#sporks) --- Lifetioncoin Documentation"
+        - "[Understanding Sporks](https://docs.dash.org/en/stable/developers/index.html#sporks) --- Lifetioncoin Documentation"
 
 ---

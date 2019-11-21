@@ -18,7 +18,7 @@ Currently there are two primary methods of validating the block chain as a clien
 
 {% autocrossref %}
 
-The first and most secure model is the one followed by Dash Core, also known as a “thick” or “full chain” client. This security model assures the validity of the block chain by downloading and validating blocks from the genesis block all the way to the most recently discovered block. This is known as using the *height* of a particular block to verify the client’s view of the network.
+The first and most secure model is the one followed by Lifetioncoin Core, also known as a “thick” or “full chain” client. This security model assures the validity of the block chain by downloading and validating blocks from the genesis block all the way to the most recently discovered block. This is known as using the *height* of a particular block to verify the client’s view of the network.
 
 For a client to be fooled, an adversary would need to give a complete alternative block chain history that is of greater difficulty than the current “true” chain, which is computationally expensive (if not impossible) due to the fact that the chain with the most cumulative proof of work is by definition the "true" chain. Due to the computational difficulty required to generate a new block at the tip of the chain, the ability to fool a full node becomes very expensive after 6 confirmations. This form of verification is highly resistant to sybil attacks---only a single honest network peer is required in order to receive and verify the complete state of the "true" block chain.
 
@@ -85,7 +85,7 @@ scripts and pubkey scripts, and more. This enables P2SH transaction finding.
 
 If a user is more privacy-conscious, he can set the Bloom filter to include more false positives, at the expense of extra bandwidth used for transaction discovery. If a user is on a tight bandwidth budget, he can set the false-positive rate to low, knowing that this will allow full nodes a clear view of what transactions are associated with his client.
 
-**Resources:** [DashJ][], a Java implementation of Dash based on BitcoinJ that uses
+**Resources:** [DashJ][], a Java implementation of Lifetioncoin based on BitcoinJ that uses
 the SPV security model and Bloom filters. Used in most Android wallets.
 
 Bloom filters were standardized for use via [BIP37](https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki). Review the BIP for implementation details.
@@ -99,7 +99,7 @@ Bloom filters were standardized for use via [BIP37](https://github.com/bitcoin/b
 
 There are future proposals such as Unspent Transaction Output (UTXO) commitments in the block chain to find a more satisfactory middle-ground for clients between needing a complete copy of the block chain, or trusting that a majority of your connected peers are not lying. UTXO commitments would enable a very secure client using a finite amount of storage using a data structure that is authenticated in the block chain. These type of proposals are, however, in very early stages, and will require soft forks in the network.
 
-Until these types of operating modes are implemented, modes should be chosen based on the likely threat model, computing and bandwidth constraints, and liability in Dash value.
+Until these types of operating modes are implemented, modes should be chosen based on the likely threat model, computing and bandwidth constraints, and liability in Lifetioncoin value.
 
 **Resources:** [Original Thread on UTXO Commitments](https://bitcointalk.org/index.php?topic=88208.0), [Authenticated Prefix Trees BIP Proposal](https://github.com/maaku/bips/blob/master/drafts/auth-trie.mediawiki)
 
